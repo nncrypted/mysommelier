@@ -1,138 +1,70 @@
-Yii 2 Practical-B Application Template
+My Sommelier Personal Wine Cellar Management
 ======================================
 
-[![Latest Stable Version](https://poser.pugx.org/kartik-v/yii2-app-practical-b/v/stable.svg)](https://packagist.org/packages/kartik-v/yii2-app-practical-b) 
-[![License](https://poser.pugx.org/kartik-v/yii2-app-practical-b/license.svg)](https://packagist.org/packages/kartik-v/yii2-app-practical-b)
-[![Total Downloads](https://poser.pugx.org/kartik-v/yii2-app-practical-b/downloads.svg)](https://packagist.org/packages/kartik-v/yii2-app-practical-b) 
-[![Monthly Downloads](https://poser.pugx.org/kartik-v/yii2-app-practical-b/d/monthly.png)](https://packagist.org/packages/kartik-v/yii2-app-practical-b)
-[![Daily Downloads](https://poser.pugx.org/kartik-v/yii2-app-practical-b/d/daily.png)](https://packagist.org/packages/kartik-v/yii2-app-practical-b)
+This application uses Kartik Yii 2 Practical-B Application Template
 
-The Yii 2 Practical-B Application Template is a skeleton Yii 2 application based on the 
-[yii2-basic template](https://github.com/yiisoft/yii2-app-basic/) best for
-rapidly creating small projects. The template allows a **practical** method to directly 
-access the application from the app root.
+History
+======================================
+MySommelier was born from a personal need to manage my library of wine accumulated over many years.  
+As a private wine collector, after you get beyond 30-40 bottles is difficult to remember off the top 
+of your head how much of which variety/vintage/winemaker you may have on hand.
 
-The template contains the basic features including user login/logout and a contact page.
-It includes all commonly used configurations that would allow you to focus on adding new
-features to your application.
+When I looked around, I found 2 types of apps available (web apps and phone apps).  There were 
+several web applications that offered to allow their registered users to manage their cellars.  
+In addition to all the advertising clutter, none of these sites had a good user experience for 
+actually entering your wine data.  They focused on data normalization (to support marketing and 
+analysis) over usability.  They were clunky, hard to navigate and confused with all kinds of 
+data that most of us just don't care about. I did find some very good phone apps out there, 
+but those with the best UI and features were phone-only.  There was no web browser interface.  
+At one point, I sat down for several evenings and went through adding my inventory to the app 
+one bottle at a time.  Then, after I had it all loaded, I thought I'd like to see how many 
+bottles of zinfandel I had.  Well, there were no "reports" nor was there and easy export option.
+The phone is a good way to manage 1 bottle at a time, but not a good device to manage your entire 
+inventory.
 
+This all got me to thinking:  What I'd really like is a web based wine cellar inventory management 
+system that had an easy to use web browser front end that I could access from anywhere AND a mobile 
+application version that provided a subset of features that I wanted to access "while on the 
+road".  I looked around quite a bit and found nothing that really met my needs.
 
-Why yii2-practical-b?
----------------------
-
-After installing a `app`, in the yii2-basic application you normally would access the
-frontend by:
-
-```
-http://domain/app/web
-```
-
-However, in many **practical** scenarios (especially on shared and single domain hosts) one 
-would want their users to directly access the app as:
-
-```
-http://domain/app
-```
-
-The `yii2-app-practical-b` enables you to achieve just that by carefully moving and rearranging the 
-bootstrap files and web components of frontend to work directly out of the app root. The 
-`web` folder is entirely eliminated and one can directly access the application frontend
-this way:
-
-```
-http://domain/app
-```
-
-All other aspects of the app configuration remain the same as the **yii2-basic** app. The original `assets` folder
-in the approot is renamed to `assets_b`, while the `web/assets` folder moves to app root.
-
-SOME KEY ADDITIONS
--------------------
-
-1. The template has some security preconfigured for users with Apache web servers. It has a default `.htaccess` security configuration setup.
-2. The template has prettyUrl enabled by default and the changes have been made to `.htaccess` as well as `urlManager`
-   component config in the config directory.
-
-DIRECTORY STRUCTURE
--------------------
-
-```
-    /                   contains the entry script and web resources
-    assets/             contains the web runtime assets
-    assets_b/           contains application assets such as JavaScript and CSS
-    commands/           contains console commands (controllers)
-    config/             contains application configurations
-    controllers/        contains Web controller classes
-    mail/               contains view files for e-mails
-    models/             contains model classes
-    runtime/            contains files generated during runtime
-    tests/              contains various tests for the yii2-practical-b application
-    vendor/             contains dependent 3rd-party packages
-    views/              contains view files for the Web application
-```
-
-REQUIREMENTS
-------------
-
-The minimum requirement by this application template that your Web server supports PHP 5.4.0.
+So enter MySommelier.  After building most of the needed functionality, I made the decision to 
+refactor the entire application into the much more modern Yii2 framework.  I am using the v1 as
+a functionality guide, but I will be fixing all the user experience and DB issues I ran across 
+during my first go-round.  
 
 
-INSTALLATION
-------------
+It's a pretty standard PHP/MySQL web application built on the Yii2 Framework v2.0.5 and 
+includes RESTful interfaces for selected data objects/functionality.  With the Yii2 Framework, 
+I've added 3 themes to support normal PC or laptop, tablet and mobile phone formats.  It's just 
+1 application with auto device detection and themes to customize the view to the device.  
+Not all functionality is available in all views.
 
-### Install from an Archive File
+The RESTful interface provides a external interface opening access to your own cellar data and 
+all the reference data. 
 
-Extract the archive file downloaded from [yiiframework.com](http://www.yiiframework.com/download/) to
-a directory named `practical-b` that is directly under the Web root.
+I've focused the mobile features around 3 primary use cases:
 
-> Note: When using a archive file method, the vendor folder is not automatically created. You must 
- extract the [yii2-basic vendor folder from here](https://github.com/yiisoft/yii2/releases/download/2.0.0/yii-basic-app-2.0.0.tgz).
- Then you must copy this folder directly under the app root (i.e. `practical-b` directory).
- 
-You can then access the application through the following URL:
+"I'm at my cellar, managing my wine inventory"
 
-~~~
-http://localhost/practical-b/
-~~~
-
-
-### Install via Composer
-
-If you do not have [Composer](http://getcomposer.org/), you may install it by following the instructions
-at [getcomposer.org](http://getcomposer.org/doc/00-intro.md#installation-nix).
-
-You can then install this application template using the following command:
-
-~~~
-php composer.phar global require "fxp/composer-asset-plugin:1.0.0-beta3"
-php composer.phar create-project --prefer-dist --stability=dev kartik-v/yii2-app-practical-b practical-b
-~~~
-
-Now you should be able to access the application through the following URL, assuming `practical-b` is the directory
-directly under the Web root.
-
-~~~
-http://localhost/practical-b
-~~~
+- I'd like to quickly add, delete, increment or decrement a wine
+- I'd like to know how many bottles I have, of what varietal and what region
+- I'd like to add/delete/update wineries, regions, appellations and varietals
+- I'd like to add/delete/update users and user permissions
 
 
-CONFIGURATION
--------------
+"I'm wine tasting at a winery"
 
-### Database
+- I'd like to see what I have in my cellar
+- I'd like to capture notes/comments about what I'm tasting tasting
+- I'd like to take a few pictures (of wine and the winery) and attach them appropriately
+- I'd like to capture a purchase of a wine
 
-Edit the file `config/db.php` with real data, for example:
+"I'm at a store"
 
-```php
-return [
-	'class' => 'yii\db\Connection',
-	'dsn' => 'mysql:host=localhost;dbname=yii2practicalb',
-	'username' => 'root',
-	'password' => '1234',
-	'charset' => 'utf8',
-];
-```
+- I'd like scan a barcode and see if that wine is in my cellar (or has been)
+- I'd like to record a price for the wine
+- I'd like to capture a purchase of a wine
 
-**NOTE:** Yii won't create the database for you, this has to be done manually before you can access it.
+The Team</h2>
 
-Also check and edit the other files in the `config/` directory to customize your application.
+	Jim Kreth - all in one
