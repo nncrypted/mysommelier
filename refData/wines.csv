@@ -1,0 +1,77 @@
+id,wine_name,winery_id,appellation_id,wine_year,wine_varietal_id,create_dt,bottle_size,image_file,overall_rating,description,upc_barcode,update_dt
+1,Syrah,5,224,nv,88,"2013-11-25 20:00:00",750ml,label_image_00000.jpg,89,Syrah,NULL,NULL
+2,"Sauvignon Blanc",7,225,2012,81,"2013-11-25 20:00:01",750ml,label_image_00000.jpg,89,"marllborough New Zealand",NULL,NULL
+3,"Sierra Foothills",1,151,2006,7,"2013-11-25 20:00:02",750ml,label_image_00000.jpg,89,"Sierra Foothills",NULL,NULL
+4,"Monterey Oakless",1,95,2010,16,"2013-11-25 20:00:03",750ml,label_image_00003.jpg,94,"Monterey Oakless",NULL,NULL
+5,"Monterey Barrel Aged",1,95,2003,16,"2013-11-25 20:00:04",750ml,label_image_00002.jpg,92,"Monterey Barrel Aged",NULL,NULL
+6,"El Dorado Estate Late Harvest Zinfandel",1,49,2011,32,"2013-11-25 20:00:05",750ml,label_image_00000.jpg,89,"El Dorado Estate",NULL,NULL
+7,"Nocturne El Dorado",1,49,2004,101,"2013-11-25 20:00:06",375ml,label_image_00000.jpg,89,"Nocturne El Dorado",NULL,NULL
+8,"El Dorado Estate",1,49,2006,64,"2013-11-25 20:00:07",750ml,label_image_00000.jpg,89,"El Dorado Estate",NULL,NULL
+9,"El Dorado Estate",1,49,2009,64,"2013-11-25 20:00:08",750ml,label_image_00000.jpg,89,"El Dorado Estate",NULL,NULL
+10,"Vintage Dessert Wine Lodi",1,78,2002,64,"2013-11-25 20:00:09",375ml,label_image_00000.jpg,89,"Vintage Dessert Wine Lodi",NULL,NULL
+11,"Petite Sirah Vintage Dessert wine",1,49,2002,64,"2013-11-25 20:00:10",375ml,label_image_00000.jpg,89,"Petite Sirah Vintage Dessert wine",NULL,NULL
+12,"Petite Suite",1,49,2007,64,"2013-11-25 20:00:11",375ml,label_image_00000.jpg,89,"Petite Suite",NULL,NULL
+13,"El Dorado Estate",1,49,2010,86,"2013-11-25 20:00:12",750ml,label_image_00000.jpg,89,"El Dorado Estate",NULL,NULL
+14,"El Dorado",1,49,2009,86,"2013-11-25 20:00:13",750ml,label_image_00000.jpg,89,"El Dorado",NULL,NULL
+15,Monterey,1,95,2003,64,"2013-11-25 20:00:14",750ml,label_image_00000.jpg,89,Monterey,NULL,NULL
+16,"El Dorado",1,46,2003,88,"2013-11-25 20:00:15",750ml,label_image_00000.jpg,89,"El Dorado",NULL,NULL
+17,"El Dorado Herbert Vineyard",1,46,2008,101,"2013-11-25 20:00:16",750ml,label_image_00000.jpg,89,"El Dorado Herbert Vineyard",NULL,NULL
+18,"Reserve Naylor",4,46,2006,7,"2013-11-25 20:00:17",750ml,label_image_00000.jpg,89,"Reserve Naylor",NULL,NULL
+19,"Fairplay Estate",4,46,2008,103,"2013-11-25 20:00:18",750ml,label_image_00000.jpg,89,"Fairplay Estate",NULL,NULL
+20,"Bottle Your Own",4,46,nv,47,"2013-11-25 20:00:19",750ml,label_image_00000.jpg,89,"Bottle Your Own",NULL,NULL
+21,Estate,4,46,2007,64,"2013-11-25 20:00:20",750ml,label_image_00000.jpg,89,Estate,NULL,NULL
+22,"Green Vineyards",4,46,2007,88,"2013-11-25 20:00:21",750ml,label_image_00000.jpg,89,"Green Vineyards",NULL,NULL
+23,Reserve,4,46,2004,88,"2013-11-25 20:00:22",750ml,label_image_00000.jpg,89,Reserve,NULL,NULL
+24,"Reserve El Dorado",4,46,2005,88,"2013-11-25 20:00:23",750ml,label_image_00000.jpg,89,"Reserve El Dorado",NULL,NULL
+25,"El Dorado",4,46,2007,101,"2013-11-25 20:00:24",750ml,label_image_00000.jpg,89,"El Dorado",NULL,NULL
+26,"El Dorado",4,46,2007,101,"2013-11-25 20:00:25",750ml,label_image_00000.jpg,89,"El Dorado",NULL,NULL
+27,"Bottle Your Own",4,46,nv,101,"2013-11-25 20:00:26",750ml,label_image_00000.jpg,89,"Bottle Your Own",NULL,NULL
+28,Bordeau,8,226,2010,103,"2013-11-25 20:00:27",750ml,label_image_00000.jpg,89,Bordeau,NULL,NULL
+29,"Sierra Foothills",9,151,2010,103,"2013-11-25 20:00:28",750ml,label_image_00000.jpg,89,"Sierra Foothills",NULL,NULL
+30,"El Dorado",9,49,2011,7,"2013-11-25 20:00:29",750ml,label_image_00000.jpg,89,"El Dorado",NULL,NULL
+31,"El Dorado",9,49,2009,32,"2013-11-25 20:00:30",750ml,label_image_00000.jpg,89,"El Dorado",NULL,NULL
+32,"Sierra Foothills",9,151,2009,103,"2013-11-25 20:00:31",750ml,label_image_00000.jpg,89,"Sierra Foothills",NULL,NULL
+33,"El Dorado",9,46,2009,90,"2013-11-25 20:00:32",500ml,label_image_00000.jpg,89,"El Dorado",NULL,NULL
+34,"Fairplay Estate",9,49,2005,79,"2013-11-25 20:00:33",750ml,label_image_00000.jpg,89,"Fairplay Estate",NULL,NULL
+35,"Reserve Fairplay",9,49,2006,64,"2013-11-25 20:00:34",750ml,label_image_00000.jpg,89,"Reserve Fairplay",NULL,NULL
+36,"Paso Robles",10,116,2009,64,"2013-11-25 20:00:35",750ml,label_image_00000.jpg,89,"Paso Robles",NULL,NULL
+37,"Paso Robles",10,116,2008,64,"2013-11-25 20:00:36",750ml,label_image_00000.jpg,89,"Paso Robles",NULL,NULL
+38,"Loco - Paso Robles",10,116,2009,90,"2013-11-25 20:00:37",750ml,label_image_00000.jpg,89,"Paso Robles",NULL,NULL
+39,"Paso Robles",10,116,2009,103,"2013-11-25 20:00:38",750ml,label_image_00000.jpg,89,"Paso Robles",NULL,NULL
+40,"Paso Robles",10,116,2010,88,"2013-11-25 20:00:39",750ml,label_image_00000.jpg,89,"Paso Robles",NULL,NULL
+41,"Paso Robles",10,116,2009,88,"2013-11-25 20:00:40",750ml,label_image_00000.jpg,89,"Paso Robles",NULL,NULL
+42,"Central Coast",11,22,2010,11,"2013-11-25 20:00:41",750ml,label_image_00000.jpg,89,"Central Coast",NULL,NULL
+43,"Reserve Estate Grown Paragon Vineyard",6,45,2008,16,"2013-11-25 20:00:42",750ml,label_image_00000.jpg,89,"Reserve Estate Grown Paragon Vineyard",NULL,NULL
+44,Paragon,6,45,2010,68,"2013-11-25 20:00:43",750ml,label_image_00000.jpg,89,Paragon,NULL,NULL
+45,"New Zealand",12,225,2011,81,"2013-11-25 20:00:44",750ml,label_image_00000.jpg,89,"New Zealand",NULL,NULL
+46,"Empress Juana - Primabera",13,17,2011,103,"2013-11-25 20:00:45",750ml,label_image_00000.jpg,89,"Empress Juana",NULL,NULL
+47,"Empress La Petite Rachel",13,17,2011,88,"2013-11-25 20:00:46",750ml,label_image_00000.jpg,89,"Empress La Petite Rachel",NULL,NULL
+48,"Edna Valley",14,45,2010,16,"2013-11-25 20:00:47",750ml,label_image_00000.jpg,89,"Edna Valley",NULL,NULL
+49,"Arroyo Grande Valley",15,8,2010,68,"2013-11-25 20:00:48",750ml,label_image_00000.jpg,89,"Arroyo Grande Valley",NULL,NULL
+50,"Sierra Foothills",16,46,nv,105,"2013-11-25 20:00:49",750ml,label_image_00000.jpg,89,"Sierra Foothills",NULL,NULL
+51,"Sierra Foothills",16,46,2011,7,"2013-11-25 20:00:50",750ml,label_image_00000.jpg,89,"Sierra Foothills",NULL,NULL
+52,"El Dorado",16,46,2010,103,"2013-11-25 20:00:51",750ml,label_image_00000.jpg,89,"El Dorado",NULL,NULL
+53,"El Dorado",16,46,2010,50,"2013-11-25 20:00:52",750ml,label_image_00000.jpg,89,"El Dorado",NULL,NULL
+54,"El Dorado",16,46,2009,101,"2013-11-25 20:00:53",750ml,label_image_00000.jpg,89,"El Dorado",NULL,NULL
+55,Felice,17,49,2010,103,"2013-11-25 20:00:54",750ml,label_image_00000.jpg,89,Felice,NULL,NULL
+56,"Fairplay Estate",17,49,nv,103,"2013-11-25 20:00:55",750ml,label_image_00000.jpg,89,"Fairplay Estate",NULL,NULL
+57,Mendocino,18,87,2009,16,"2013-11-25 20:00:56",750ml,label_image_00000.jpg,89,Mendocino,NULL,NULL
+58,"Pinot Noir",19,227,2000,68,"2013-11-25 20:00:57",750ml,label_image_00000.jpg,89,"Pinot Noir",NULL,NULL
+59,"Wheelhouse Paso Robles",20,116,2010,101,"2013-11-25 20:00:58",750ml,label_image_00000.jpg,89,"Wheelhouse Paso Robles",NULL,NULL
+60,"Blend Fleur de Montagne",21,49,2007,103,"2013-11-25 20:00:59",750ml,label_image_00000.jpg,89,"Blend Fleur de Montagne",NULL,NULL
+61,"Picnic Hill Vineyards",22,17,2011,101,"2013-11-25 20:00:60",750ml,label_image_00000.jpg,89,"Picnic Hill Vineyards",NULL,NULL
+62,Alitia,22,17,2008,101,"2013-11-25 20:00:61",750ml,label_image_00000.jpg,89,Alitia,NULL,NULL
+63,"Paso Robles",23,116,2006,88,"2013-11-25 20:00:62",750ml,label_image_00000.jpg,89,"Paso Robles",NULL,NULL
+64,"San Luis Obispo",24,116,2009,103,"2013-11-25 20:00:63",750ml,label_image_00000.jpg,89,"San Luis Obispo",NULL,NULL
+65,"Reserve Amador County",2,17,2006,7,"2013-11-25 20:00:64",750ml,label_image_00000.jpg,89,"Reserve Amador County",NULL,NULL
+66,"Reserve Amador County",2,17,2006,7,"2013-11-25 20:00:65",750ml,label_image_00000.jpg,89,"Reserve Amador County",NULL,NULL
+67,"Reserve Sierra Oaks Vineyard El Dorado",2,46,2007,47,"2013-11-25 20:00:66",750ml,label_image_00000.jpg,89,"Reserve Sierra Oaks Vineyard El Dorado",NULL,NULL
+68,"Reserve El Dorado Sierra Oaks",2,46,2007,47,"2013-11-25 20:00:67",750ml,label_image_00000.jpg,89,"Reserve El Dorado Sierra Oaks",NULL,NULL
+69,"Sierra Oaks Vineyard",2,46,2007,47,"2013-11-25 20:00:68",750ml,label_image_00000.jpg,89,"Sierra Oaks Vineyard",NULL,NULL
+70,Reserve,2,49,2007,88,"2013-11-25 20:00:69",750ml,label_image_00000.jpg,89,Reserve,NULL,NULL
+71,Reserve,2,49,2007,88,"2013-11-25 20:00:70",750ml,label_image_00000.jpg,89,Reserve,NULL,NULL
+72,"Estate El Dorado",2,49,2007,90,"2013-11-25 20:00:71",750ml,label_image_00000.jpg,89,"Estate El Dorado",NULL,NULL
+73,"Reserve El Dorado",2,49,2007,101,"2013-11-25 20:00:72",750ml,label_image_00001.jpg,93,"Reserve El Dorado",NULL,NULL
+74,Amador,2,17,2005,101,"2013-11-25 20:00:73",750ml,label_image_00000.jpg,89,Amador,NULL,NULL
+75,"Amador ReZerve",3,17,2007,71,"2013-12-16 14:39:05",750ml,label_image_00004.jpg,91,"Really good wine and a great value for the price",NULL,NULL
+76,"Temprance Tarts Naughty Bawdy",13,17,nv,103,"2013-12-16 14:40:00",1L,label_image_00005.jpg,90,"Nice standard table wine in a 1 liter jug.  Fun to take to parties.",NULL,NULL

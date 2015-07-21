@@ -1,0 +1,122 @@
+id,region_name,country
+1,Napa Valley,USA
+2,Sierra Foothills,USA
+3,Sonoma Valley,USA
+4,CA Central Valley,USA
+5,Bordeaux,FRANCE
+6,Sicily,ITALY
+7,Albania,ALBANIA
+8,Algeria,ALGERIA
+9,California,USA
+10,Arizona,USA
+11,Arkansas,USA
+12,Colorado,USA
+13,Connecticut,USA
+14,Delaware,USA
+15,Idaho,USA
+16,Illinois,USA
+17,Indiana,USA
+18,Maryland,USA
+19,Massachusetts,USA
+20,Michigan,USA
+21,Minnisota,USA
+22,Mississippi,USA
+23,Missouri,USA
+24,New Jersey,USA
+25,New Mexico,USA
+26,New York,USA
+27,North Carolina,USA
+28,Ohio,USA
+29,Oregon,USA
+30,Pennsylvania,USA
+31,Texas,USA
+32,Virginia,USA
+33,Washington,USA
+34,Wisconsin,USA
+35,West Virginia,USA
+36,Tennesse,USA
+37,Marllborough,NEW ZEALAND
+38,Unknown,UNKNOWN
+39,Campania,ITALY
+40,Basilicata,ITALY
+41,Apulia,ITALY
+42,Lombardy,ITALY
+43,Alsace,FRANCE
+44,Beaujolais,FRANCE
+45,Bugey,FRANCE
+46,Burgundy,FRANCE
+47,Champagne,FRANCE
+48,Charente,FRANCE
+49,Corsica,FRANCE
+50,Jura,FRANCE
+51,Languedoc,FRANCE
+52,Roussillon,FRANCE
+53,Loire,FRANCE
+54,Lyonnais,FRANCE
+55,Provence,FRANCE
+56,Rhone,FRANCE
+57,Savoy,FRANCE
+58,Southwest France,FRANCE
+59,Eastern France,FRANCE
+60,Mendoza,ARGENTINA
+61,San Juan,ARGENTINA
+62,La Rioja,ARGENTINA
+63,Northwest,ARGENTINA
+64,Patagonia,ARGENTINA
+65,Atacama,CHILE
+66,Coquimbo,CHILE
+67,Aconcagua,CHILE
+68,Central Valley,CHILE
+69,Southern,CHILE
+70,Wachau,AUSTRIA
+71,Kremstal,AUSTRIA
+72,Kamptal,AUSTRIA
+73,Traisental,AUSTRIA
+74,Wagram,AUSTRIA
+75,Weinviertel,AUSTRIA
+76,Carnuntum,AUSTRIA
+77,Thermenregion,AUSTRIA
+78,Neusiedlersee,AUSTRIA
+79,Hugelland,AUSTRIA
+80,Mittelburgenland,AUSTRIA
+81,Sudburgenland,AUSTRIA
+82,Vienna,AUSTRIA
+83,Sudoststeiermark,AUSTRIA
+84,Sudsteiermark,AUSTRIA
+85,Weststeiermark,AUSTRIA
+86,Andalusia,SPAIN
+87,Aragon,SPAIN
+88,Asturias,SPAIN
+89,Cantabria,SPAIN
+90,Castile-Leon,SPAIN
+91,Castile-La Mancha,SPAIN
+92,Catalonia,SPAIN
+93,Madrid,SPAIN
+94,Valencia,SPAIN
+95,Extremadura,SPAIN
+96,Galicia,SPAIN
+97,Balearic Islands,SPAIN
+98,Canary Islands,SPAIN
+99,Navarre,SPAIN
+100,Basque,SPAIN
+101,Murcia,SPAIN
+102,La Rioja,SPAIN
+103,Piedmont,ITALY
+104,South Tyrol,ITALY
+105,Trentino,ITALY
+106,Veneto,ITALY
+107,Ahr,GERMANY
+108,Baden,GERMANY
+109,Franconia,GERMANY
+110,Hessische,GERMANY
+111,Mittelrhein,GERMANY
+112,Mosel,GERMANY
+113,Nahe,GERMANY
+114,Palatinate,GERMANY
+115,Rheingau,GERMANY
+116,Rheinhessen,GERMANY
+117,Saale-Unstrut,GERMANY
+118,Saxony,GERMANY
+119,Wurttemberg,GERMANY
+120,Tafelwein,GERMANY
+121,Landwein,GERMANY

@@ -1,0 +1,586 @@
+id,country,region_id,appellation,common_flg
+208,Albania,7,Zaberzan Skrapar,N
+209,Algeria,8,Chateau Romain,N
+210,Algeria,8,Chateau Tellagh,N
+211,Algeria,8,Coteaux de Mascara,N
+212,Algeria,8,Coteaux de Tlemcen,N
+213,Algeria,8,Coteaux de Zaccar,N
+214,Algeria,8,Cuvee du President,N
+215,Algeria,8,Dahra,N
+216,Algeria,8,Benchicao,N
+217,Algeria,8,Djendel,N
+218,Algeria,8,El Bordj,N
+219,Algeria,8,Khadra ,N
+220,Algeria,8,Mamounia ,N
+221,Algeria,8,Sebra,N
+222,Algeria,8,Medea,N
+223,Algeria,8,Monts du Tessala,N
+155,USA,10,Sonoita,Y
+4,USA,11,Altus,Y
+7,USA,11,Arkansas Mountain,Y
+113,USA,11,"Ozark Mountain [AR,MO,OK]",Y
+1,USA,9,Alexander Valley,Y
+3,USA,9,Alta Mesa,Y
+5,USA,9,Anderson Valley,Y
+189,USA,9,Antelope Valley of the California High Desert,Y
+8,USA,9,Arroyo Grande Valley,Y
+9,USA,9,Arroyo Seco,Y
+10,USA,9,Atlas Peak,Y
+13,USA,9,Ben Lomond Mountain,Y
+14,USA,9,Benmore Valley,Y
+15,USA,9,Bennett Valley,Y
+16,USA,9,Borden Ranch,Y
+17,USA,9,Shenandoah Valley,Y
+190,USA,9,Calistoga,Y
+18,USA,9,Capay Valley,Y
+19,USA,9,Carmel Valley,Y
+22,USA,9,Central Coast,Y
+24,USA,9,Chalk Hill,Y
+25,USA,9,Chalone,Y
+27,USA,9,Chiles Valley,Y
+28,USA,9,Cienega Valley,Y
+29,USA,9,Clarksburg,Y
+30,USA,9,Clear Lake,Y
+31,USA,9,Clement Hills,Y
+32,USA,9,Cole Ranch,Y
+191,USA,9,Coombsville,Y
+35,USA,9,Cosumnes River,Y
+36,USA,9,Covelo,Y
+37,USA,9,Cucamonga Valley,Y
+39,USA,9,Diablo Grande,Y
+40,USA,9,Diamond Mountain District,Y
+41,USA,9,Dos Rios,Y
+42,USA,9,Dry Creek Valley,Y
+44,USA,9,Dunnigan Hills,Y
+45,USA,9,Edna Valley,Y
+46,USA,9,El Dorado,Y
+49,USA,9,Fair Play,Y
+51,USA,9,Fiddletown,Y
+192,USA,9,Fort Ross-Seaview,Y
+56,USA,9,Green Valley of Russian River Valley,Y
+57,USA,9,Guenoc Valley,Y
+58,USA,9,Hames Valley,Y
+193,USA,9,Happy Canyon of Santa Barbara,Y
+61,USA,9,High Valley,Y
+63,USA,9,Howell Mountain,Y
+194,USA,9,Inwood Valley,Y
+66,USA,9,Jahant,Y
+68,USA,9,Knights Valley,Y
+195,USA,9,Leona Valley,Y
+75,USA,9,Lime Kiln Valley,Y
+77,USA,9,Livermore Valley,Y
+78,USA,9,Lodi,Y
+81,USA,9,Los Carneros,Y
+82,USA,9,Madera,Y
+83,USA,9,Malibu-Newton Canyon,Y
+85,USA,9,McDowell Valley,Y
+87,USA,9,Mendocino,Y
+88,USA,9,Mendocino Ridge,Y
+89,USA,9,Merritt Island,Y
+94,USA,9,Mokelumne River,Y
+95,USA,9,Monterey,Y
+97,USA,9,Mount Harlan,Y
+98,USA,9,Mount Veeder,Y
+99,USA,9,Napa Valley,Y
+101,USA,9,North Coast,Y
+104,USA,9,North Yuba,Y
+106,USA,9,Northern Sonoma,Y
+107,USA,9,Oak Knoll District of Napa Valley,Y
+108,USA,9,Oakville,Y
+114,USA,9,Pacheco Pass,Y
+115,USA,9,Paicines,Y
+116,USA,9,Paso Robles,Y
+196,USA,9,Pine Mountain-Cloverdale Peak,Y
+117,USA,9,Potter Valley,Y
+119,USA,9,Ramona Valley,Y
+122,USA,9,Red Hills Lake County,Y
+124,USA,9,Redwood Valley,Y
+126,USA,9,River Junction,Y
+127,USA,9,Rockpile,Y
+130,USA,9,Russian River Valley,Y
+131,USA,9,Rutherford,Y
+132,USA,9,Saddle Rock Malibu,Y
+133,USA,9,Saint Helena,Y
+134,USA,9,Salado Creek,Y
+135,USA,9,San Antonio Valley,Y
+136,USA,9,San Benito,Y
+137,USA,9,San Bernabe,Y
+138,USA,9,San Francisco Bay,Y
+139,USA,9,San Lucas,Y
+140,USA,9,San Pasqual Valley,Y
+141,USA,9,San Ysidro District,Y
+142,USA,9,Santa Clara Valley,Y
+143,USA,9,Santa Cruz Mountains,Y
+144,USA,9,Santa Lucia Highlands,Y
+145,USA,9,Santa Maria Valley,Y
+146,USA,9,Santa Ynez Valley,Y
+147,USA,9,Seiad Valley,Y
+151,USA,9,Sierra Foothills,Y
+197,USA,9,Sierra Pelona Valley,Y
+152,USA,9,Sloughhouse,Y
+154,USA,9,Solano County Green Valley,Y
+156,USA,9,Sonoma Coast,Y
+157,USA,9,Sonoma Mountain,Y
+158,USA,9,Sonoma Valley,Y
+159,USA,9,South Coast,Y
+162,USA,9,Spring Mountain District,Y
+163,USA,9,Sta. Rita Hills,Y
+164,USA,9,Stags Leap District,Y
+165,USA,9,Suisun Valley,Y
+166,USA,9,Temecula Valley,Y
+171,USA,9,Tracy Hills,Y
+172,USA,9,Trinity Lakes,Y
+180,USA,9,Wild Horse Valley,Y
+182,USA,9,Willow Creek,Y
+186,USA,9,York Mountain,Y
+187,USA,9,Yorkville Highlands,Y
+188,USA,9,Yountville,Y
+55,USA,12,Grand Valley,N
+178,USA,12,West Elks,N
+160,USA,13,"Southeastern New England [CT,MA,RI]",N
+179,USA,13,Western Connecticut Highlands,N
+23,USA,14,"Central Delaware Valley [NJ,PA]",N
+153,USA,15,"Snake River Valley [ID,OR]",N
+149,USA,16,Shawnee Hills,N
+198,USA,17,Indiana Uplands,N
+109,USA,17,"Ohio River Valley [IN,KY,OH,WV]",N
+20,USA,18,Catoctin,N
+38,USA,18,"Cumberland Valley [MD,PA]",N
+76,USA,18,Linganore,N
+84,USA,19,Martha's Vineyard,N
+50,USA,20,Fennville,N
+70,USA,20,Lake Michigan Shore,N
+73,USA,20,Leelanau Peninsula,N
+110,USA,20,Old Mission Peninsula,N
+2,USA,21,Alexandria Lakes,N
+93,USA,22,"Mississippi Delta [LA,MS,TN]",N
+11,USA,23,Augusta,N
+60,USA,23,Hermann,N
+112,USA,23,Ozark Highlands,N
+111,USA,24,Outer Coastal Plain,N
+177,USA,24,Warren Hills,N
+90,USA,25,"Mesilla Valley [NM,TX]",N
+91,USA,25,Middle Rio Grande Valley,N
+92,USA,25,Mimbres Valley,N
+21,USA,26,Cayuga Lake,Y
+52,USA,26,Finger Lakes,Y
+64,USA,26,Hudson River Region,Y
+69,USA,26,"Lake Erie [NY,OH,PA]",Y
+79,USA,26,Long Island,Y
+100,USA,26,Niagara Escarpment,Y
+102,USA,26,North Fork of Long Island,Y
+148,USA,26,Seneca Lake,Y
+59,USA,26,"The Hamptons, Long Island",Y
+199,USA,27,Haw River Valley,N
+200,USA,27,Swan Creek,N
+183,USA,27,Yadkin Valley,N
+54,USA,28,Grand River Valley,N
+65,USA,28,Isle St. George,N
+80,USA,28,Loramie Creek,N
+6,USA,29,Applegate Valley,Y
+26,USA,29,Chehalem Mountains,Y
+33,USA,29,"Columbia Gorge [OR,WA]",Y
+34,USA,29,"Columbia Valley [OR,WA]",Y
+43,USA,29,Dundee Hills,Y
+201,USA,29,Elkton Oregon,Y
+47,USA,29,Eola Amity Hills,Y
+86,USA,29,McMinnville,Y
+121,USA,29,Red Hill Douglas County,Y
+125,USA,29,Ribbon Ridge,Y
+129,USA,29,Rogue Valley,Y
+161,USA,29,Southern Oregon,Y
+173,USA,29,Umpqua Valley,Y
+176,USA,29,"Walla Walla Valley [OR,WA]",Y
+181,USA,29,Williamette Valley,Y
+185,USA,29,Yamhill-Carlton District,Y
+72,USA,30,Lancaster Valley,N
+74,USA,30,Lehigh Valley,N
+12,USA,31,Bell Mountain,N
+48,USA,31,Escondido Valley,N
+53,USA,31,Fredericksburg in the Texas Hill Country,N
+167,USA,31,Texas Davis Mountains,N
+168,USA,31,Texas High Plains,N
+169,USA,31,Texas Hill Country,N
+170,USA,31,Texoma,N
+202,USA,32,Middleburg Virginia,N
+96,USA,32,Monticello,N
+103,USA,32,North Fork of Roanoke,N
+105,USA,32,Northern Neck George Washington Birthplace,N
+128,USA,32,Rocky Knob,N
+150,USA,32,"Shenandoah Valley [VA,WV]",N
+174,USA,32,Virginia's Eastern Shore,N
+203,USA,33,Ancient Lakes of Columbia Valley,Y
+62,USA,33,Horse Heaven Hills,Y
+204,USA,33,Lake Chelan,Y
+205,USA,33,Naches Heights,Y
+118,USA,33,Puget Sound,Y
+120,USA,33,Rattlesnake Hills,Y
+123,USA,33,Red Mountain,Y
+206,USA,33,Snipes Mountain,Y
+175,USA,33,Wahluke Slope,Y
+184,USA,33,Yakima Valley,Y
+67,USA,35,"Kanawha River Valley [OH,WV]",N
+71,USA,34,Lake Wisconsin,N
+207,USA,34,Wisconsin Ledge,N
+224,USA,36,Middle Tennesse,Y
+225,New Zealand,37,Marllborough,N
+226,France,5,Bordeau,Y
+227,Unknown,38,Unknown,N
+228,ITALY,6,Sicily,Y
+229,ITALY,39,Sardinia,Y
+230,ITALY,40,Piedmont,Y
+231,ITALY,40,Aosta Valley,Y
+232,ITALY,40,Lombardy,Y
+233,ITALY,40,Trentino,Y
+234,ITALY,40,Friuli-Venezia,Y
+235,ITALY,40,Veneto,Y
+236,ITALY,40,Liguria,Y
+237,ITALY,40,Emilia-Romagna,Y
+238,ITALY,41,Tuscany,Y
+239,ITALY,41,Marche,Y
+240,ITALY,41,Umbria,Y
+241,ITALY,41,Lazio,Y
+242,ITALY,41,Abruzzi,Y
+243,ITALY,41,Molise,Y
+244,ITALY,42,Campania,Y
+245,ITALY,42,Puglia,Y
+246,ITALY,42,Basilicata,Y
+247,ITALY,42,Calabria,Y
+248,FRANCE,43,Alsace,Y
+249,FRANCE,43,Cremant d'Alsace,N
+250,FRANCE,44,Beaujolais,Y
+251,FRANCE,44,Beaujolais-Villages,Y
+252,FRANCE,44,Brouilly,Y
+253,FRANCE,44,Chenas,N
+254,FRANCE,44,Chiroubles,N
+255,FRANCE,44,Cote de Brouilly,Y
+256,FRANCE,44,Fleurie,N
+257,FRANCE,44,Julienas,N
+258,FRANCE,44,Morgon,N
+259,FRANCE,44,Moulin a vent,N
+260,FRANCE,44,Regnie,N
+261,FRANCE,44,Saint-Amour,Y
+262,FRANCE,5,Barsac,N
+263,FRANCE,5,Blaye,N
+264,FRANCE,5,Bordeaux,Y
+265,FRANCE,5,Bordeaux clairet,N
+266,FRANCE,5,Bordeaux Cotes de Francs,N
+267,FRANCE,5,Bordeaux Haut-Benauge,N
+268,FRANCE,5,Bordeaux moelleux,N
+269,FRANCE,5,Bordeaux rose,N
+270,FRANCE,5,Bordeaux sec,N
+271,FRANCE,5,Bordeaux superieur,N
+272,FRANCE,5,Cadillac,Y
+273,FRANCE,5,Canon Fronsac,N
+274,FRANCE,5,Cerons,Y
+275,FRANCE,5,Cotes de Blaye,Y
+276,FRANCE,5,Cotes de Bordeaux Saint-Macaire,Y
+277,FRANCE,5,Cotes de Bourg,Y
+278,FRANCE,5,Cotes de Castillon,Y
+279,FRANCE,5,Cremant de Bordeaux,Y
+280,FRANCE,5,Entre-Deux-Mers,Y
+281,FRANCE,5,Entre-Deux-Mers-Haut-Benauge,N
+282,FRANCE,5,Fronsac,Y
+283,FRANCE,5,Graves,Y
+284,FRANCE,5,Graves de Vayres,N
+285,FRANCE,5,Graves Superieures,N
+286,FRANCE,5,Haut-Medoc,Y
+287,FRANCE,5,Lalande-de-Pomerol,Y
+288,FRANCE,5,Listrac-Medoc,Y
+289,FRANCE,5,Loupiac,Y
+290,FRANCE,5,Lussac-Saint-Emilion,Y
+291,FRANCE,5,Margaux,Y
+292,FRANCE,5,Medoc,Y
+293,FRANCE,5,Montagne Saint-Emilion,Y
+294,FRANCE,5,Moulis or Moulis-en-Medoc,Y
+295,FRANCE,5,Neac,Y
+296,FRANCE,5,Pauillac,Y
+297,FRANCE,5,Pessac-Leognan,Y
+298,FRANCE,5,Pomerol,Y
+299,FRANCE,5,Premieres Cotes de Blaye,Y
+300,FRANCE,5,Premieres Cotes de Bordeaux,Y
+301,FRANCE,5,Puisseguin Saint-Emilion,Y
+302,FRANCE,5,Saint-Emilion,Y
+303,FRANCE,5,Saint-Emilion Grand Cru,N
+304,FRANCE,5,Saint-Estephe,Y
+305,FRANCE,5,Saint-Georges Saint-Emilion,Y
+306,FRANCE,5,Saint-Julien,Y
+307,FRANCE,5,Sainte-Croix-du-Mont,Y
+308,FRANCE,5,Sainte-Foy-Bordeaux,Y
+309,FRANCE,5,Sauternes,Y
+310,FRANCE,45,Bugey,Y
+311,FRANCE,45,Roussette du Bugey,Y
+312,FRANCE,46,Aloxe-Corton,Y
+313,FRANCE,46,Auxey-Duresses,Y
+314,FRANCE,46,Batard-Montrachet,Y
+315,FRANCE,46,Beaune,Y
+316,FRANCE,46,Bienvenues-Batard-Montrachet,Y
+317,FRANCE,46,Blagny,Y
+318,FRANCE,46,Bonnes-Mares,Y
+319,FRANCE,46,Bourgogne,Y
+320,FRANCE,46,Bourgogne aligote,N
+321,FRANCE,46,Bourgogne clairet,N
+322,FRANCE,46,Bourgogne clairet Cote chalonnaise,N
+323,FRANCE,46,Bourgogne Coulanges-la-Vineuse,N
+324,FRANCE,46,Bourgogne Cote Saint-Jacques,N
+325,FRANCE,46,Bourgogne Coulanges-la-Vineuse,N
+326,FRANCE,46,Bourgogne Cotes d'Auxerre,N
+327,FRANCE,46,Bourgogne Cotes du Couchois,N
+328,FRANCE,46,Bourgogne Epineuil,N
+329,FRANCE,46,Bourgogne grand ordinaire,N
+330,FRANCE,46,Bourgogne Hautes-cotes de Beaune,N
+331,FRANCE,46,Bourgogne Hautes-cotes de Nuits,N
+332,FRANCE,46,Bourgogne La Chapelle Notre-Dame,N
+333,FRANCE,46,Bourgogne le Chapitre,N
+334,FRANCE,46,Bourgogne Montrecul,N
+335,FRANCE,46,Bourgogne mousseux,N
+336,FRANCE,46,Bourgogne ordinaire,N
+337,FRANCE,46,Bourgogne Passe-tout-grains,N
+338,FRANCE,46,Bourgogne Vezelay,N
+339,FRANCE,46,Bourgogne rose,N
+340,FRANCE,46,Bouzeron,Y
+341,FRANCE,46,Chablis,Y
+342,FRANCE,46,Chablis Grand Cru,N
+343,FRANCE,46,Chablis Premier Cru,N
+344,FRANCE,46,Chambertin,Y
+345,FRANCE,46,Chambertin-Clos-de-Beze,N
+346,FRANCE,46,Chambolle-Musigny,Y
+347,FRANCE,46,Chapelle-Chambertin,N
+348,FRANCE,46,Charlemagne,Y
+349,FRANCE,46,Charmes-Chambertin,N
+350,FRANCE,46,Chassagne-Montrachet,N
+351,FRANCE,46,Chevalier-Montrachet,Y
+352,FRANCE,46,Chorey-les-Beaune,Y
+353,FRANCE,46,Clos des Lambrays,Y
+354,FRANCE,46,Clos de la Roche,Y
+355,FRANCE,46,Clos de Tart,Y
+356,FRANCE,46,Clos de Vougeot,Y
+357,FRANCE,46,Clos Saint-Denis,Y
+358,FRANCE,46,Corton,Y
+359,FRANCE,46,Corton-Charlemagne,N
+360,FRANCE,46,Cote de Beaune,Y
+361,FRANCE,46,Cote de Beaune-Villages,Y
+362,FRANCE,46,Cote de Nuits-villages,Y
+363,FRANCE,46,Cotes du Forez,Y
+364,FRANCE,46,Cremant de Bourgogne,Y
+365,FRANCE,46,Criots-Batard-Montrachet,Y
+366,FRANCE,46,Echezeaux,Y
+367,FRANCE,46,Fixin,Y
+368,FRANCE,46,Gevrey-Chambertin,N
+369,FRANCE,46,Givry,N
+370,FRANCE,46,Grands Echezeaux,Y
+371,FRANCE,46,Griotte-Chambertin,Y
+372,FRANCE,46,Irancy,Y
+373,FRANCE,46,Ladoix,Y
+374,FRANCE,46,La Grande Rue,Y
+375,FRANCE,46,La Romanee,Y
+376,FRANCE,46,La Tache,Y
+377,FRANCE,46,Latricieres-Chambertin,Y
+378,FRANCE,46,Macon,Y
+379,FRANCE,46,Macon superieur,Y
+380,FRANCE,46,Macon-villages,Y
+381,FRANCE,46,Maranges,Y
+382,FRANCE,46,Marsannay,Y
+383,FRANCE,46,Mazis-Chambertin,N
+384,FRANCE,46,Mazoyeres-Chambertin,N
+385,FRANCE,46,Mercurey,Y
+386,FRANCE,46,Meursault,Y
+387,FRANCE,46,Montagny,Y
+388,FRANCE,46,Monthelie,Y
+389,FRANCE,46,Montrachet,Y
+390,FRANCE,46,Morey-Saint-Denis,Y
+391,FRANCE,46,Musigny,Y
+392,FRANCE,46,Nuits-Saint-Georges,Y
+393,FRANCE,46,Pernand-Vergelesses,N
+394,FRANCE,46,Petit Chablis,Y
+395,FRANCE,46,Pommard,Y
+396,FRANCE,46,Pouilly-Fuisse,Y
+397,FRANCE,46,Pouilly-Loche,Y
+398,FRANCE,46,Pouilly-Vinzelles,Y
+399,FRANCE,46,Puligny-Montrachet,N
+400,FRANCE,46,Richebourg,Y
+401,FRANCE,46,Romanee-Conti,Y
+402,FRANCE,46,Romanee-Saint-Vivant,Y
+403,FRANCE,46,Ruchottes-Chambertin,Y
+404,FRANCE,46,Rully,Y
+405,FRANCE,46,Saint-Aubin,Y
+406,FRANCE,46,Saint-Bris,Y
+407,FRANCE,46,Saint-Romain,Y
+408,FRANCE,46,Saint-Veran,Y
+409,FRANCE,46,Santenay,Y
+410,FRANCE,46,Savigny-les-Beaune,N
+411,FRANCE,46,Tonnerre,Y
+412,FRANCE,46,Vins Fins de la Cote de Nuits,Y
+413,FRANCE,46,Vire-Clesse,Y
+414,FRANCE,46,Volnay,Y
+415,FRANCE,46,Volnay Santenots,N
+416,FRANCE,46,Vosne-Romanee,N
+417,FRANCE,46,Vougeot,N
+418,FRANCE,47,Champagne,Y
+419,FRANCE,47,Coteaux Champenois,Y
+420,FRANCE,47,Rose des Riceys,Y
+421,FRANCE,48,Pineau des Charentes,Y
+422,FRANCE,49,Ajaccio,Y
+423,FRANCE,49,Corse or Vin de Corse,Y
+424,FRANCE,49,Patrimonio,Y
+425,FRANCE,59,Cotes de Toul,Y
+426,FRANCE,50,Arbois,N
+427,FRANCE,50,Chateau-Chalon,N
+428,FRANCE,50,Cotes du Jura,N
+429,FRANCE,50,Cremant du Jura,N
+430,FRANCE,50,L'Etoile,Y
+431,FRANCE,51,Blanquette methode ancestrale,Y
+432,FRANCE,51,Cotes de la Malepere,Y
+433,FRANCE,52,Banyuls,N
+434,FRANCE,52,Banyuls Grand Cru,N
+435,FRANCE,52,Blanquette de Limoux,Y
+436,FRANCE,52,Cabardes,Y
+437,FRANCE,52,Clairette de Bellegarde,Y
+438,FRANCE,52,Clairette du Languedoc,Y
+439,FRANCE,52,Collioure,N
+440,FRANCE,52,Corbieres,N
+441,FRANCE,52,Coteaux du Languedoc,Y
+442,FRANCE,52,Cotes du Roussillon,Y
+443,FRANCE,52,Cotes du Roussillon Villages,Y
+444,FRANCE,52,Cremant de Limoux,Y
+445,FRANCE,52,Faugeres,N
+446,FRANCE,52,Fitou,N
+447,FRANCE,52,Frontignan,Y
+448,FRANCE,52,Grand Roussillon,Y
+449,FRANCE,52,Limoux,Y
+450,FRANCE,52,Maury,Y
+451,FRANCE,52,Minervois,Y
+452,FRANCE,52,Minervois-La Liviniere,N
+453,FRANCE,52,Muscat de Frontignan,N
+454,FRANCE,52,Muscat de Lunel,N
+455,FRANCE,52,Muscat de Mireval,N
+456,FRANCE,52,Muscat de Rivesaltes,N
+457,FRANCE,52,Muscat de Saint-Jean de Minervois,N
+458,FRANCE,52,Rivesaltes,Y
+459,FRANCE,52,Saint-Chinian,N
+460,FRANCE,53,Anjou,Y
+461,FRANCE,53,Anjou-Coteaux de la Loire,N
+462,FRANCE,53,Anjou-Gamay,Y
+463,FRANCE,53,Anjou Villages,Y
+464,FRANCE,53,Anjou Villages Brissac,N
+465,FRANCE,53,Bonnezeaux,N
+466,FRANCE,53,Bourgueil,N
+467,FRANCE,53,Cabernet d'Anjou,N
+468,FRANCE,53,Cabernet de Saumur,N
+469,FRANCE,53,Chaume,N
+470,FRANCE,53,Cheverny,N
+471,FRANCE,53,Chinon,N
+472,FRANCE,53,Cote Roannaise,Y
+473,FRANCE,53,Coteaux de l'Aubance,Y
+474,FRANCE,53,Coteaux du Giennois,Y
+475,FRANCE,53,Coteaux du Layon,Y
+476,FRANCE,53,Coteaux du Loir,Y
+477,FRANCE,53,Coteaux de Saumur,Y
+478,FRANCE,53,Coteaux du Vendomois,Y
+479,FRANCE,53,Cour-Cheverny,N
+480,FRANCE,53,Cremant de Loire,Y
+481,FRANCE,53,Jasnieres,Y
+482,FRANCE,53,Menetou-Salon,Y
+483,FRANCE,53,Montlouis,Y
+484,FRANCE,53,Muscadet,Y
+485,FRANCE,53,Muscadet-Coteaux de la Loire,N
+486,FRANCE,53,Muscadet-Cotes de Grandlieu,N
+487,FRANCE,53,Muscadet-Sevre et Maine,N
+488,FRANCE,53,Orleans,Y
+489,FRANCE,53,Orleans-Clery,N
+490,FRANCE,53,Pouilly-Fume,N
+491,FRANCE,53,Pouilly-sur-Loire,N
+492,FRANCE,53,Quarts de Chaume,Y
+493,FRANCE,53,Quincy,Y
+494,FRANCE,53,Reuilly,Y
+495,FRANCE,53,Rose de Loire,N
+496,FRANCE,53,Saint-Nicolas-de-Bourgueil,Y
+497,FRANCE,53,Saint-Pourcain,Y
+498,FRANCE,53,Sancerre,Y
+499,FRANCE,53,Saumur,Y
+500,FRANCE,53,Saumur-Champigny,N
+501,FRANCE,53,Saumur mousseux,N
+502,FRANCE,53,Savennieres,Y
+503,FRANCE,53,Savennieres-Coulee-de-Serrant,N
+504,FRANCE,53,Savennieres-Roche-aux-Moines,N
+505,FRANCE,53,Touraine,Y
+506,FRANCE,53,Touraine-Amboise,N
+507,FRANCE,53,Touraine-Azay-le-Rideau,N
+508,FRANCE,53,Touraine-Mesland,N
+509,FRANCE,53,Touraine Noble Joue,N
+510,FRANCE,53,Valencay,Y
+511,FRANCE,53,Vouvray,Y
+512,FRANCE,54,Coteaux du Lyonnais,Y
+513,FRANCE,55,Bandol,N
+514,FRANCE,55,Bellet,N
+515,FRANCE,55,Cassis,Y
+516,FRANCE,55,Coteaux d'Aix-en-Provence,Y
+517,FRANCE,55,Coteaux de Pierrevert,Y
+518,FRANCE,55,Coteaux Varois,Y
+519,FRANCE,55,Cotes de Provence,Y
+520,FRANCE,55,Les Baux-de-Provence,N
+521,FRANCE,55,Palette,N
+522,FRANCE,56,Beaumes de Venise,N
+523,FRANCE,56,Chateau-Grillet,Y
+524,FRANCE,56,Chateauneuf-du-Pape,Y
+525,FRANCE,56,Chatillon-en-Diois,N
+526,FRANCE,56,Clairette de Die,Y
+527,FRANCE,56,Condrieu,N
+528,FRANCE,56,Cornas,N
+529,FRANCE,56,Costieres de Nimes,Y
+530,FRANCE,56,Cote-Rotie,Y
+531,FRANCE,56,Coteaux de Die,Y
+532,FRANCE,56,Coteaux du Tricastin,Y
+533,FRANCE,56,Cotes du Luberon,Y
+534,FRANCE,56,Cotes du Rhone,Y
+535,FRANCE,56,Cotes du Rhone Villages,Y
+536,FRANCE,56,Cotes du Ventoux,N
+537,FRANCE,56,Cotes du Vivarais,N
+538,FRANCE,56,Cremant de Die,N
+539,FRANCE,56,Crozes-Hermitage,N
+540,FRANCE,56,Gigondas,N
+541,FRANCE,56,Hermitage,Y
+542,FRANCE,56,Lirac,N
+543,FRANCE,56,Muscat de Beaumes-de-Venise,Y
+544,FRANCE,56,Saint-Joseph,Y
+545,FRANCE,56,Saint-Peray,Y
+546,FRANCE,56,Tavel,Y
+547,FRANCE,56,Vacqueyras,N
+548,FRANCE,56,Vinsobres,N
+549,FRANCE,57,Crepy,N
+550,FRANCE,57,Roussette de Savoie,N
+551,FRANCE,57,Seyssel,N
+552,FRANCE,57,Vin de Savoie,N
+553,FRANCE,58,Bearn,N
+554,FRANCE,58,Bergerac,Y
+555,FRANCE,58,Bergerac sec,N
+556,FRANCE,58,Bergerac rose,N
+557,FRANCE,58,Buzet,N
+558,FRANCE,58,Cahors,N
+559,FRANCE,58,Coteaux du Quercy,N
+560,FRANCE,58,Cotes de Bergerac,Y
+561,FRANCE,58,Cotes de Bergerac Blanc,N
+562,FRANCE,58,Cotes de Duras,N
+563,FRANCE,58,Cotes de Millau,N
+564,FRANCE,58,Cotes de Montravel,N
+565,FRANCE,58,Cotes du Marmandais,N
+566,FRANCE,58,Fronton,N
+567,FRANCE,58,Gaillac,N
+568,FRANCE,58,Gaillac Premieres Cotess,N
+569,FRANCE,58,Haut-Montravel,Y
+570,FRANCE,58,Irouleguy,N
+571,FRANCE,58,Jurancon,N
+572,FRANCE,58,Madiran,N
+573,FRANCE,58,Marcillac,N
+574,FRANCE,58,Monbazillac,N
+575,FRANCE,58,Montravel,N
+576,FRANCE,58,Pacherenc du Vic-Bilh,N
+577,FRANCE,58,Pacherenc du Vic-Bilh Sec,N
+578,FRANCE,58,Pecharmant,N
+579,FRANCE,58,Rosette,N
+580,FRANCE,58,Saint-Mont,N
+581,FRANCE,58,Saint-Sardos,N
+582,FRANCE,58,Saussignac,N
+583,FRANCE,58,Tursan,N
+584,FRANCE,58,Vins d'Entraygues et du Fel,N
+585,FRANCE,58,Vins d'Estaing,N
