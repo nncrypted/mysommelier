@@ -35,7 +35,13 @@ $this->params['breadcrumbs'][] = $this->title;
             'default_cellar_loc_id',
         ],
     ]) ?>
-	
+
+	<div>
+	<?php
+		$junk = $model->files[0]->url;
+		echo Html::img($junk, ['alt' => 'The Image']);
+	?>
+	</div>
 	<p>
 		<?= \nemmo\attachments\components\AttachmentsTable::widget(['model' => $model]) ?>
 	</p>

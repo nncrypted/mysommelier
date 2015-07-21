@@ -5,9 +5,9 @@ This application uses Kartik Yii 2 Practical-B Application Template
 
 History
 ======================================
-MySommelier was born from a personal need to manage my library of wine accumulated over many years.  
-As a private wine collector, after you get beyond 30-40 bottles is difficult to remember off the top 
-of your head how much of which variety/vintage/winemaker you may have on hand.
+MySommelier was born from a personal need to manage my library of wine accumulated over many 
+years.  As a private wine collector, after you get beyond 30-40 bottles is difficult to remember 
+off the top of your head how much of which variety/vintage/winemaker you may have on hand.
 
 When I looked around, I found 2 types of apps available (web apps and phone apps).  There were 
 several web applications that offered to allow their registered users to manage their cellars.  
@@ -36,8 +36,8 @@ during my first go-round.
 It's a pretty standard PHP/MySQL web application built on the Yii2 Framework v2.0.5 and 
 includes RESTful interfaces for selected data objects/functionality.  With the Yii2 Framework, 
 I've added 3 themes to support normal PC or laptop, tablet and mobile phone formats.  It's just 
-1 application with auto device detection and themes to customize the view to the device.  
-Not all functionality is available in all views.
+1 application with auto device detection and themes to customize the view to the device.  Not 
+all functionality is available in all views.
 
 The RESTful interface provides a external interface opening access to your own cellar data and 
 all the reference data. 
