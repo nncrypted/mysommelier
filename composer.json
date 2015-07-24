@@ -23,6 +23,7 @@
         "yiisoft/yii2-bootstrap": "*",
         "yiisoft/yii2-swiftmailer": "*",
 		"yiisoft/yii2-jui": "*",
+		"dkeeper/yii2-mobiledetect": "*",
 		"miloschuman/yii2-highcharts-widget": "*",
 		"kartik-v/yii2-helpers": "dev-master",
 		"kartik-v/yii2-context-menu": "*",

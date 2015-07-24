@@ -25,8 +25,18 @@
 <?php $this->beginBody() ?>
     <div class="wrap">
         <?php
+			$mobDetect = \Yii::$app->params['detect'];
+			$devType = '';
+			if ($mobDetect['isMobile'])
+			{
+				$devType = '- Mobile';
+			}
+			if ($mobDetect['isTablet'])
+			{
+				$devType = '- Tablet';
+			}
             NavBar::begin([
-                'brandLabel' => 'My Sommelier',
+                'brandLabel' => 'My Sommelier ' . $devType,
                 'brandUrl' => Yii::$app->homeUrl,
                 'options' => [
                     'class' => 'navbar-inverse navbar-fixed-top',

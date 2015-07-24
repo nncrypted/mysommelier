@@ -37,13 +37,15 @@ $this->params['breadcrumbs'][] = $this->title;
     ]) ?>
 
 	<div>
-	<?php
-		$junk = $model->files[0]->url;
-		echo Html::img($junk, ['alt' => 'The Image']);
-	?>
-	</div>
 	<p>
 		<?= \nemmo\attachments\components\AttachmentsTable::widget(['model' => $model]) ?>
 	</p>
+	<?php
+		if (isset($model->files[0]))
+		{
+			echo Html::img($model->files[0]->url, ['alt' => 'The Image']);
+		}
+	?>
+	</div>
 
 </div>

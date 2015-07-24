@@ -39,7 +39,12 @@
                 <h3>Label Image</h3>
 
                 <p>
-					<?= \nemmo\attachments\components\AttachmentsTable::widget(['model' => $wineRecord]) ?>
+					<?php
+						if (isset($wineRecord->files[0]))
+						{
+							echo Html::img($wineRecord->files[0]->url, ['alt' => 'The Image']);
+						}
+					?>
 				</p>
             </div>
         </div>

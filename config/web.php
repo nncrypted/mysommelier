@@ -14,7 +14,10 @@ $config = [
         'cache' => [
             'class' => 'yii\caching\FileCache',
         ],
-        'errorHandler' => [
+        'mobiledetect' => [
+	        'class' => 'dkeeper\mobiledetect\Detect',
+		],
+		'errorHandler' => [
             'errorAction' => 'site/error',
         ],
         'mailer' => [
