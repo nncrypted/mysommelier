@@ -40,7 +40,10 @@ class Cellarwines extends \yii\db\ActiveRecord
         return [
             [['cellar_id', 'wine_id', 'quantity', 'cellar_loc_id'], 'required'],
             [['cellar_id', 'wine_id', 'quantity', 'rating', 'created_at', 'updated_at', 'cellar_loc_id'], 'integer'],
-            [['cost'], 'number']
+            [['cost'], 'number'],
+            [['cellar_id'], 'exist', 'skipOnError' => true, 'targetClass' => Cellars::className(), 'targetAttribute' => ['cellar_id' => 'id']],
+            [['wine_id'], 'exist', 'skipOnError' => true, 'targetClass' => Wines::className(), 'targetAttribute' => ['wine_id' => 'id']],
+            [['cellar_loc_id'], 'exist', 'skipOnError' => true, 'targetClass' => Locations::className(), 'targetAttribute' => ['cellar_loc_id' => 'id']],
         ];
     }
 
@@ -61,14 +64,14 @@ class Cellarwines extends \yii\db\ActiveRecord
     {
         return [
             'id' => 'ID',
-            'cellar_id' => 'Cellar',
-            'wine_id' => 'Wine',
+            'cellar_id' => 'Cellar ID',
+            'wine_id' => 'Wine ID',
             'quantity' => 'Quantity',
             'rating' => 'Rating',
             'created_at' => 'Created At',
             'updated_at' => 'Updated At',
             'cost' => 'Cost',
-            'cellar_loc_id' => 'Cellar Location',
+            'cellar_loc_id' => 'Cellar Loc ID',
         ];
     }
 
@@ -93,6 +96,6 @@ class Cellarwines extends \yii\db\ActiveRecord
      */
     public function getCellarLoc()
     {
-        return $this->hasOne(Locations::className(), ['cellar_loc_id' => 'cellar_loc_id']);
+        return $this->hasOne(Locations::className(), ['id' => 'cellar_loc_id']);
     }
 }

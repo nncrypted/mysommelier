@@ -40,10 +40,11 @@ class Wineries extends \yii\db\ActiveRecord
         return [
             [['winery_name'], 'required'],
             [['default_appellation_id', 'created_at', 'updated_at'], 'integer'],
-            [['description'], 'string'],
             [['winery_name', 'proprietor_name', 'winemaker_name'], 'string', 'max' => 45],
             [['phone'], 'string', 'max' => 12],
             [['website'], 'string', 'max' => 128],
+            [['description'], 'string', 'max' => 255],
+            [['default_appellation_id'], 'exist', 'skipOnError' => true, 'targetClass' => Appellations::className(), 'targetAttribute' => ['default_appellation_id' => 'id']],
         ];
     }
 
@@ -65,7 +66,7 @@ class Wineries extends \yii\db\ActiveRecord
         return [
             'id' => 'ID',
             'winery_name' => 'Winery Name',
-            'default_appellation_id' => 'Default Appellation',
+            'default_appellation_id' => 'Default Appellation ID',
             'phone' => 'Phone',
             'proprietor_name' => 'Proprietor Name',
             'winemaker_name' => 'Winemaker Name',

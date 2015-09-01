@@ -3,6 +3,7 @@
 namespace app\controllers;
 
 use Yii;
+use yii\data\Sort;
 use app\models\Appellations;
 use app\models\AppellationsSearch;
 use yii\web\Controller;
@@ -32,14 +33,12 @@ class AppellationsController extends Controller
      */
     public function actionIndex()
     {
-        $searchModel = new AppellationsSearch();
-        $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
-        $pager = new \yii\data\Pagination(['pageSize' => 50]);
-        $dataProvider->setPagination($pager);
+        $searchModel = new AppellationsSearch;
+        $dataProvider = $searchModel->search(Yii::$app->request->getQueryParams());
 
         return $this->render('index', [
-            'searchModel' => $searchModel,
             'dataProvider' => $dataProvider,
+            'searchModel' => $searchModel,
         ]);
     }
 
@@ -50,9 +49,13 @@ class AppellationsController extends Controller
      */
     public function actionView($id)
     {
-        return $this->render('view', [
-            'model' => $this->findModel($id),
-        ]);
+        $model = $this->findModel($id);
+
+        if ($model->load(Yii::$app->request->post()) && $model->save()) {
+        return $this->redirect(['view', 'id' => $model->id]);
+        } else {
+        return $this->render('view', ['model' => $model]);
+}
     }
 
     /**
@@ -62,10 +65,10 @@ class AppellationsController extends Controller
      */
     public function actionCreate()
     {
-        $model = new Appellations();
+        $model = new Appellations;
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['index']);
+            return $this->redirect(['view', 'id' => $model->id]);
         } else {
             return $this->render('create', [
                 'model' => $model,

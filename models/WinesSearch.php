@@ -12,46 +12,66 @@ use app\models\Wines;
  */
 class WinesSearch extends Wines
 {
-    /**
-     * @inheritdoc
-     */
-    public function rules()
+	public $wine_year;
+	public $app_name;
+	public $winery_name;
+
+	public function rules()
     {
         return [
             [['id', 'winery_id', 'appellation_id', 'wine_varietal_id', 'overall_rating', 'created_at', 'updated_at'], 'integer'],
             [['wine_name', 'wine_year', 'bottle_size', 'upc_barcode', 'description'], 'safe'],
+			[['wine_year', 'winery_name','bottle_size'], 'safe'],
         ];
     }
 
-    /**
-     * @inheritdoc
-     */
     public function scenarios()
     {
         // bypass scenarios() implementation in the parent class
         return Model::scenarios();
     }
 
-    /**
-     * Creates data provider instance with search query applied
-     *
-     * @param array $params
-     *
-     * @return ActiveDataProvider
-     */
     public function search($params)
     {
         $query = Wines::find();
+		$query->joinWith(['winery','wineVarietal','appellation']);
 
         $dataProvider = new ActiveDataProvider([
             'query' => $query,
+			'pagination' => [
+				'pageSize' => 100,
+			],
+			'sort' => [
+				'attributes' => [
+					'winery_name' => [
+						'asc' => ['winery_name' => SORT_ASC],
+						'desc' => ['winery_name' => SORT_DESC],
+					],
+					'wine_year' => [
+						'asc' => ['wine_year' => SORT_ASC],
+						'desc' => ['wine_year' => SORT_DESC],
+					],
+					'varietal_name' => [
+						'asc' => ['varietal_name' => SORT_ASC],
+						'desc' => ['varietal_name' => SORT_DESC],
+					],
+					'wine_name' => [
+						'asc' => ['wine_name' => SORT_ASC],
+						'desc' => ['wine_name' => SORT_DESC],
+					],
+					'bottle_size' => [
+						'asc' => ['bottle_size' => SORT_ASC],
+						'desc' => ['bottle_size' => SORT_DESC],
+					],
+					'overall_rating' => [
+						'asc' => ['overall_rating' => SORT_ASC],
+						'desc' => ['overall_rating' => SORT_DESC],
+					],
+				],
+			],
         ]);
 
-        $this->load($params);
-
-        if (!$this->validate()) {
-            // uncomment the following line if you do not want to return any records when validation fails
-            // $query->where('0=1');
+        if (!($this->load($params) && $this->validate())) {
             return $dataProvider;
         }
 
@@ -69,7 +89,9 @@ class WinesSearch extends Wines
             ->andFilterWhere(['like', 'wine_year', $this->wine_year])
             ->andFilterWhere(['like', 'bottle_size', $this->bottle_size])
             ->andFilterWhere(['like', 'upc_barcode', $this->upc_barcode])
-            ->andFilterWhere(['like', 'description', $this->description]);
+            ->andFilterWhere(['like', 'description', $this->description])
+			->andFilterWhere(['appellations.app_name' => $this->app_name])
+			->andFilterWhere(['wineries.winery_name' => $this->winery_name]);
 
         return $dataProvider;
     }

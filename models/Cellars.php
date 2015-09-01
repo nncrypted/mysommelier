@@ -4,6 +4,7 @@ namespace app\models;
 
 use Yii;
 use yii\behaviors\TimestampBehavior;
+use yii\behaviors\BlameableBehavior;
 
 /**
  * This is the model class for table "cellars".
@@ -37,7 +38,8 @@ class Cellars extends \yii\db\ActiveRecord
         return [
             [['owner_id', 'cellar_name'], 'required'],
             [['owner_id', 'created_at', 'default_cellar_loc_id'], 'integer'],
-            [['cellar_name'], 'string', 'max' => 45]
+            [['cellar_name'], 'string', 'max' => 45],
+            [['owner_id'], 'exist', 'skipOnError' => true, 'targetClass' => User::className(), 'targetAttribute' => ['owner_id' => 'id']],
         ];
     }
 
@@ -52,6 +54,11 @@ class Cellars extends \yii\db\ActiveRecord
 				'createdAtAttribute' => 'created_at',
 				'updatedAtAttribute' => FALSE,
 			],
+			[
+				'class' => BlameableBehavior::className(),
+				'createdByAttribute' => 'owner_id',
+				'updatedByAttribute' => FALSE,
+			],
 			'fileBehavior' => [
 				'class' => \nemmo\attachments\behaviors\FileBehavior::className()
 			]
@@ -65,10 +72,10 @@ class Cellars extends \yii\db\ActiveRecord
     {
         return [
             'id' => 'ID',
-            'owner_id' => 'Owner',
+            'owner_id' => 'Owner ID',
             'cellar_name' => 'Cellar Name',
             'created_at' => 'Created At',
-            'default_cellar_loc_id' => 'Default Cellar Location',
+            'default_cellar_loc_id' => 'Default Cellar Loc ID',
         ];
     }
 

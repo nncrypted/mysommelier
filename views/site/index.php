@@ -27,7 +27,7 @@
                             <td>Year</td><td><?= Html::encode($wineRecord->wine_year) ?></td>
                         </tr>
                         <tr>
-                            <td>Varietal</td><td><?= Html::encode($wineRecord->wineVarietal->name) ?></td>
+                            <td>Varietal</td><td><?= Html::encode($wineRecord->wineVarietal->varietal_name) ?></td>
                         </tr>
                         <tr>
                             <td>Name</td><td><?= Html::encode($wineRecord->wine_name) ?></td>

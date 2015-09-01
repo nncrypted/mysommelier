@@ -8,7 +8,7 @@ use Yii;
  * This is the model class for table "varietals".
  *
  * @property integer $id
- * @property string $name
+ * @property string $varietal_name
  * @property string $common_flg
  * @property string $varietal_type
  * @property string $description
@@ -31,11 +31,11 @@ class Varietals extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['name', 'common_flg'], 'required'],
-            [['name'], 'string', 'max' => 45],
+            [['varietal_name', 'common_flg'], 'required'],
+            [['varietal_name'], 'string', 'max' => 45],
             [['common_flg'], 'string', 'max' => 1],
             [['varietal_type'], 'string', 'max' => 10],
-            [['description'], 'string', 'max' => 255]
+            [['description'], 'string', 'max' => 255],
         ];
     }
 
@@ -46,8 +46,8 @@ class Varietals extends \yii\db\ActiveRecord
     {
         return [
             'id' => 'ID',
-            'name' => 'Name',
-            'common_flg' => 'Common?',
+            'varietal_name' => 'Varietal Name',
+            'common_flg' => 'Common Flg',
             'varietal_type' => 'Varietal Type',
             'description' => 'Description',
         ];

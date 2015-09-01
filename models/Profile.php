@@ -38,7 +38,8 @@ class Profile extends \yii\db\ActiveRecord
             [['user_id'], 'integer'],
             [['bio'], 'string'],
             [['name', 'public_email', 'gravatar_email', 'location', 'website'], 'string', 'max' => 255],
-            [['gravatar_id'], 'string', 'max' => 32]
+            [['gravatar_id'], 'string', 'max' => 32],
+            [['user_id'], 'exist', 'skipOnError' => true, 'targetClass' => User::className(), 'targetAttribute' => ['user_id' => 'id']],
         ];
     }
 

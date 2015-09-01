@@ -7,7 +7,7 @@ use Yii;
 /**
  * This is the model class for table "orders".
  *
- * @property integer $order_id
+ * @property integer $id
  * @property integer $qty
  * @property string $price_per_unit
  * @property integer $wine_id
@@ -42,7 +42,9 @@ class Orders extends \yii\db\ActiveRecord
             [['price_per_unit'], 'number'],
             [['order_dt', 'exp_delivery_dt'], 'safe'],
             [['ordered_from', 'delivery_location'], 'string', 'max' => 45],
-            [['futures_flg'], 'string', 'max' => 1]
+            [['futures_flg'], 'string', 'max' => 1],
+            [['wine_id'], 'exist', 'skipOnError' => true, 'targetClass' => Wines::className(), 'targetAttribute' => ['wine_id' => 'id']],
+            [['user_id'], 'exist', 'skipOnError' => true, 'targetClass' => User::className(), 'targetAttribute' => ['user_id' => 'id']],
         ];
     }
 
@@ -52,15 +54,15 @@ class Orders extends \yii\db\ActiveRecord
     public function attributeLabels()
     {
         return [
-            'order_id' => 'Order',
+            'id' => 'ID',
             'qty' => 'Qty',
-            'price_per_unit' => 'Price',
-            'wine_id' => 'Wine',
-            'user_id' => 'User',
-            'order_dt' => 'Order Date',
+            'price_per_unit' => 'Price Per Unit',
+            'wine_id' => 'Wine ID',
+            'user_id' => 'User ID',
+            'order_dt' => 'Order Dt',
             'ordered_from' => 'Ordered From',
-            'futures_flg' => 'Futures Flag',
-            'exp_delivery_dt' => 'Exp Delivery Date',
+            'futures_flg' => 'Futures Flg',
+            'exp_delivery_dt' => 'Exp Delivery Dt',
             'delivery_location' => 'Delivery Location',
         ];
     }

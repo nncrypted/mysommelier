@@ -3,7 +3,6 @@
 namespace app\models;
 
 use Yii;
-use yii\behaviors\TimestampBehavior;
 
 /**
  * This is the model class for table "comments".
@@ -36,19 +35,11 @@ class Comments extends \yii\db\ActiveRecord
         return [
             [['user_id', 'wine_id', 'comment'], 'required'],
             [['user_id', 'wine_id', 'created_at', 'updated_at'], 'integer'],
-            [['comment'], 'string']
+            [['comment'], 'string'],
+            [['wine_id'], 'exist', 'skipOnError' => true, 'targetClass' => Wines::className(), 'targetAttribute' => ['wine_id' => 'id']],
+            [['user_id'], 'exist', 'skipOnError' => true, 'targetClass' => User::className(), 'targetAttribute' => ['user_id' => 'id']],
         ];
     }
-
-	/**
-     * @inheritdoc
-     */
-	public function behaviors()
-	{
-		return [
-			TimestampBehavior::className(),
-		];
-	}
 
     /**
      * @inheritdoc
@@ -57,8 +48,8 @@ class Comments extends \yii\db\ActiveRecord
     {
         return [
             'id' => 'ID',
-            'user_id' => 'User',
-            'wine_id' => 'Wine',
+            'user_id' => 'User ID',
+            'wine_id' => 'Wine ID',
             'comment' => 'Comment',
             'created_at' => 'Created At',
             'updated_at' => 'Updated At',

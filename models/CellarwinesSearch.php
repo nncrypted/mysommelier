@@ -12,46 +12,63 @@ use app\models\Cellarwines;
  */
 class CellarwinesSearch extends Cellarwines
 {
-    /**
-     * @inheritdoc
-     */
-    public function rules()
+	public $wine_year;
+	public $loc_name;
+	public $winery_name;
+
+	public function rules()
     {
         return [
             [['id', 'cellar_id', 'wine_id', 'quantity', 'rating', 'created_at', 'updated_at', 'cellar_loc_id'], 'integer'],
             [['cost'], 'number'],
+			[['wine_year', 'loc_name', 'winery_name'], 'safe'],
         ];
     }
 
-    /**
-     * @inheritdoc
-     */
     public function scenarios()
     {
         // bypass scenarios() implementation in the parent class
         return Model::scenarios();
     }
 
-    /**
-     * Creates data provider instance with search query applied
-     *
-     * @param array $params
-     *
-     * @return ActiveDataProvider
-     */
     public function search($params)
     {
         $query = Cellarwines::find();
+		$query->joinWith(['cellar','wine','cellarLoc','wine.winery','wine.wineVarietal']);
 
         $dataProvider = new ActiveDataProvider([
             'query' => $query,
+			'sort' => [
+				'attributes' => [
+					'cellar_name' => [
+						'asc' => ['cellar_name' => SORT_ASC],
+						'desc' => ['cellar_name' => SORT_DESC],
+					],
+					'loc_name' => [
+						'asc' => ['loc_name' => SORT_ASC],
+						'desc' => ['loc_name' => SORT_DESC],
+					],
+					'winery_name' => [
+						'asc' => ['winery_name' => SORT_ASC],
+						'desc' => ['winery_name' => SORT_DESC],
+					],
+					'wine_name' => [
+						'asc' => ['wine_name' => SORT_ASC],
+						'desc' => ['wine_name' => SORT_DESC],
+					],
+					'wine_year' => [
+						'asc' => ['wine_year' => SORT_ASC],
+						'desc' => ['wine_year' => SORT_DESC],
+					],
+					'varietal_name' => [
+						'asc' => ['varietal_name' => SORT_ASC],
+						'desc' => ['varietal_name' => SORT_DESC],
+					],
+				],
+			],
         ]);
 
-        $this->load($params);
-
-        if (!$this->validate()) {
-            // uncomment the following line if you do not want to return any records when validation fails
-            // $query->where('0=1');
+        if (!($this->load($params) && $this->validate())) {
             return $dataProvider;
         }
 
@@ -65,7 +82,10 @@ class CellarwinesSearch extends Cellarwines
             'updated_at' => $this->updated_at,
             'cost' => $this->cost,
             'cellar_loc_id' => $this->cellar_loc_id,
-        ]);
+        ])
+		->andFilterWhere(['like', 'locations.loc_name', $this->loc_name])
+		->andFilterWhere(['like', 'wineries.winery_name', $this->winery_name])
+		->andFilterWhere(['like', 'wines.wine_year', $this->wine_year]);
 
         return $dataProvider;
     }
