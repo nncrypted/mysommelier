@@ -30,7 +30,7 @@ class WinesController extends Controller
      * Lists all Wines models.
      * @return mixed
      */
-    public function actionPicklist()
+    public function actionPicklist($fromCellarWines = FALSE)
     {
         $searchModel = new WinesSearch;
         $dataProvider = $searchModel->search(Yii::$app->request->getQueryParams());
@@ -38,6 +38,7 @@ class WinesController extends Controller
         return $this->render('picklist', [
             'dataProvider' => $dataProvider,
             'searchModel' => $searchModel,
+            'fromCellarWines' => $fromCellarWines,
         ]);
     }
 
@@ -77,12 +78,20 @@ class WinesController extends Controller
      * If creation is successful, the browser will be redirected to the 'view' page.
      * @return mixed
      */
-    public function actionCreate()
+    public function actionCreate($fromCellarWines = FALSE)
     {
         $model = new Wines;
 
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->id]);
+        if ($model->load(Yii::$app->request->post()) && $model->save()) 
+        {
+            if (!$fromCellarWines)
+            {
+                return $this->redirect(['cellarwines/create', 'wine_id' => $model->id]);
+            }
+            else
+            {
+                return $this->redirect(['view', 'id' => $model->id]);
+            }
         } else {
             return $this->render('create', [
                 'model' => $model,

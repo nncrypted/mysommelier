@@ -14,9 +14,6 @@ $this->title = 'Cellar Wines';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="cellarwines-index">
-    <div class="page-header">
-		<h1><?= Html::encode($this->title) ?></h1>
-    </div>
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
 
     <p>
@@ -91,8 +88,10 @@ $this->params['breadcrumbs'][] = $this->title;
 			'toolbar' => [
 				[
 					'content'=>
-						Html::a('<i class="glyphicon glyphicon-plus"></i>', ['create'], ['class' => 'btn btn-success']) 
-							. ' '.
+						Html::a('<i class="glyphicon glyphicon-plus"></i><b>Add Wine</b>', 
+                                    ['wines/picklist', 'fromCellarWines' => TRUE], 
+                                    ['class' => 'btn btn-success']) 
+							. ' ' .
 						Html::a('<i class="glyphicon glyphicon-repeat"></i>', ['index'], ['class' => 'btn btn-default','title' => 'Reset']),
 				],
 				'{export}',
@@ -100,9 +99,7 @@ $this->params['breadcrumbs'][] = $this->title;
 			],
 			'panel' => [
 				'heading'=>'<h3 class="panel-title"><i class="glyphicon glyphicon-th-list"></i> '.Html::encode($this->title).' </h3>',
-//				'type'=>'info',
 				'type'=>GridView::TYPE_PRIMARY,
-//				'before'=>Html::a('<i class="glyphicon glyphicon-plus"></i> Add', ['create'], ['class' => 'btn btn-success']),                                                                                                                                                          'after'=>Html::a('<i class="glyphicon glyphicon-repeat"></i> Reset List', ['index'], ['class' => 'btn btn-info']),
 				'showFooter'=>false
 			],
 		]); 

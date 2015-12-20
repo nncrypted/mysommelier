@@ -20,8 +20,7 @@ class WinesSearch extends Wines
     {
         return [
             [['id', 'winery_id', 'appellation_id', 'wine_varietal_id', 'overall_rating', 'created_at', 'updated_at'], 'integer'],
-            [['wine_name', 'wine_year', 'bottle_size', 'upc_barcode', 'description'], 'safe'],
-			[['wine_year', 'winery_name','bottle_size'], 'safe'],
+            [['winery_name','wine_name', 'wine_year', 'bottle_size', 'upc_barcode', 'description'], 'safe'],
         ];
     }
 

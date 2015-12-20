@@ -2,27 +2,28 @@
 
 use yii\helpers\Html;
 use yii\helpers\ArrayHelper;
+use app\models\Appellations;
+use app\models\Wineries;
 use kartik\grid\GridView;
-use app\models\Regions;
 use yii\widgets\Pjax;
 
 /**
  * @var yii\web\View $this
  * @var yii\data\ActiveDataProvider $dataProvider
- * @var app\models\AppellationsSearch $searchModel
+ * @var app\models\WinesSearch $searchModel
  */
 
-$this->title = 'Appellations';
+$this->title = 'Wines';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<div class="appellations-index">
+<div class="wines-index">
     <div class="page-header">
             <h1><?= Html::encode($this->title) ?></h1>
     </div>
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
 
     <p>
-        <?php /* echo Html::a('Create Appellations', ['create'], ['class' => 'btn btn-success'])*/  ?>
+        <?php /* echo Html::a('Create Wines', ['create'], ['class' => 'btn btn-success'])*/  ?>
     </p>
 
     <?php 
@@ -30,36 +31,55 @@ $this->params['breadcrumbs'][] = $this->title;
 		echo GridView::widget([
 			'dataProvider' => $dataProvider,
 			'filterModel' => $searchModel,
+			'pjax'=>true,
 			'columns' => [
 				[
-					'attribute' => 'country',
-					'value' => 'country',
-					'hAlign' => GridView::ALIGN_CENTER,
-					'width' => '90px',
+					'attribute' => 'winery_id',
+					'header' => 'Winery',
+					'value' => 'winery.winery_name',
+					'width' => '170px',
 					'filterType' => GridView::FILTER_SELECT2,
-					'filter' => Yii::$app->params['wine_countries'],
+					'filter' =>
+						ArrayHelper::map(Wineries::find()
+							->orderBy('winery_name')
+							->asArray()
+							->all(),
+							'id', 'winery_name'
+						),
 					'filterWidgetOptions' => [
 						'pluginOptions' => [
 							'allowClear' => true,
-							'width' => '150px',
+							'width' => '170px',
 						],
 					],
 					'filterInputOptions' => [
-						'placeholder' => 'All Countries'
+						'placeholder' => 'Any Winery'
 					],
 				],
 				[
-					'attribute' => 'region_id',
-					'header' => 'Region',
-					'value' => 'region.region_name',
+					'attribute' => 'wine_year',
+					'value' => 'wine_year',
+					'hAlign' => GridView::ALIGN_CENTER,
+					'width' => '90px',
+				],
+				[
+					'attribute' => 'varietal_name',
+					'value' => 'wineVarietal.varietal_name',
+					'width' => '175px',
+				],
+	            'wine_name',
+				[
+					'attribute' => 'appellation_id',
+					'header' => 'Appellation',
+					'value' => 'appellation.app_name',
 					'width' => '200px',
 					'filterType' => GridView::FILTER_SELECT2,
 					'filter' =>
-						ArrayHelper::map(Regions::find()
-							->orderBy('region_name')
+						ArrayHelper::map(Appellations::find()
+							->orderBy('app_name')
 							->asArray()
 							->all(),
-							'id', 'region_name'
+							'id', 'app_name'
 						),
 					'filterWidgetOptions' => [
 						'pluginOptions' => [
@@ -68,11 +88,32 @@ $this->params['breadcrumbs'][] = $this->title;
 						],
 					],
 					'filterInputOptions' => [
-						'placeholder' => 'Any region'
+						'placeholder' => 'Any appellation'
 					],
 				],
-				'app_name',
-				'common_flg',
+				[
+					'attribute' => 'bottle_size',
+					'value' => 'bottle_size',
+					'hAlign' => GridView::ALIGN_CENTER,
+					'width' => '90px',
+					'filterType' => GridView::FILTER_SELECT2,
+					'filter' => Yii::$app->params['bottle_sizes'],
+					'filterWidgetOptions' => [
+						'pluginOptions' => [
+							'allowClear' => true,
+							'width' => '150px',
+						],
+					],
+					'filterInputOptions' => [
+						'placeholder' => 'All sizes'
+					],
+				],
+				[
+					'attribute' => 'overall_rating',
+					'value' => 'overall_rating',
+					'hAlign' => GridView::ALIGN_CENTER,
+					'width' => '100px',
+				],
 				[
 					'class' => 'kartik\grid\ActionColumn',
 					'width' => '70px',
@@ -82,11 +123,7 @@ $this->params['breadcrumbs'][] = $this->title;
 								return Html::a(
 									'<span class="glyphicon glyphicon-pencil"></span>', 
 									Yii::$app->urlManager->createUrl(
-										[
-											'appellations/view',
-											'id' => $model->id,
-											'edit'=>'t'
-										]
+										['wines/view','id' => $model->id,'edit'=>'t']
 									), 
 									[
 										'title' => Yii::t('yii', 'Edit'),

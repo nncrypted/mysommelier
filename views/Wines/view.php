@@ -6,14 +6,14 @@ use kartik\datecontrol\DateControl;
 
 /**
  * @var yii\web\View $this
- * @var app\models\Varietals $model
+ * @var app\models\Wines $model
  */
 
 $this->title = $model->id;
-$this->params['breadcrumbs'][] = ['label' => 'Varietals', 'url' => ['index']];
+$this->params['breadcrumbs'][] = ['label' => 'Wines', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<div class="varietals-view">
+<div class="wines-view">
     <div class="page-header">
         <h1><?= Html::encode($this->title) ?></h1>
     </div>
@@ -30,10 +30,17 @@ $this->params['breadcrumbs'][] = $this->title;
         ],
         'attributes' => [
             'id',
-            'varietal_name',
-            'common_flg',
-            'varietal_type',
+            'wine_name',
+            'winery_id',
+            'appellation_id',
+            'wine_year',
+            'wine_varietal_id',
+            'bottle_size',
+            'upc_barcode',
             'description',
+            'overall_rating',
+            'created_at',
+            'updated_at',
         ],
         'deleteOptions'=>[
         'url'=>['delete', 'id' => $model->id],

@@ -5,12 +5,12 @@ use yii\widgets\ActiveForm;
 
 /**
  * @var yii\web\View $this
- * @var app\models\WineriesSearch $model
+ * @var app\models\WinesSearch $model
  * @var yii\widgets\ActiveForm $form
  */
 ?>
 
-<div class="wineries-search">
+<div class="wines-search">
 
     <?php $form = ActiveForm::begin([
         'action' => ['index'],
@@ -19,19 +19,23 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'id') ?>
 
-    <?= $form->field($model, 'winery_name') ?>
+    <?= $form->field($model, 'wine_name') ?>
 
-    <?= $form->field($model, 'default_appellation_id') ?>
+    <?= $form->field($model, 'winery_id') ?>
 
-    <?= $form->field($model, 'phone') ?>
+    <?= $form->field($model, 'appellation_id') ?>
 
-    <?= $form->field($model, 'proprietor_name') ?>
+    <?= $form->field($model, 'wine_year') ?>
 
-    <?php // echo $form->field($model, 'winemaker_name') ?>
+    <?php // echo $form->field($model, 'wine_varietal_id') ?>
 
-    <?php // echo $form->field($model, 'website') ?>
+    <?php // echo $form->field($model, 'bottle_size') ?>
+
+    <?php // echo $form->field($model, 'upc_barcode') ?>
 
     <?php // echo $form->field($model, 'description') ?>
+
+    <?php // echo $form->field($model, 'overall_rating') ?>
 
     <?php // echo $form->field($model, 'created_at') ?>
 

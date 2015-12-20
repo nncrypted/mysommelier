@@ -1,44 +1,69 @@
 <?php
 
 use yii\helpers\Html;
-use yii\widgets\DetailView;
+use kartik\detail\DetailView;
+use kartik\datecontrol\DateControl;
 
-/* @var $this yii\web\View */
-/* @var $model app\models\Orders */
+/**
+ * @var yii\web\View $this
+ * @var app\models\Orders $model
+ */
 
-$this->title = $model->order_id;
+$this->title = $model->id;
 $this->params['breadcrumbs'][] = ['label' => 'Orders', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="orders-view">
+    <div class="page-header">
+        <h1><?= Html::encode($this->title) ?></h1>
+    </div>
 
-    <h1><?= Html::encode($this->title) ?></h1>
-
-    <p>
-        <?= Html::a('Update', ['update', 'id' => $model->order_id], ['class' => 'btn btn-primary']) ?>
-        <?= Html::a('Delete', ['delete', 'id' => $model->order_id], [
-            'class' => 'btn btn-danger',
-            'data' => [
-                'confirm' => 'Are you sure you want to delete this item?',
-                'method' => 'post',
-            ],
-        ]) ?>
-    </p>
 
     <?= DetailView::widget([
-        'model' => $model,
+            'model' => $model,
+            'condensed'=>false,
+            'hover'=>true,
+            'mode'=>Yii::$app->request->get('edit')=='t' ? DetailView::MODE_EDIT : DetailView::MODE_VIEW,
+            'panel'=>[
+            'heading'=>$this->title,
+            'type'=>DetailView::TYPE_INFO,
+        ],
         'attributes' => [
-            'order_id',
+            'id',
             'qty',
             'price_per_unit',
             'wine_id',
             'user_id',
-            'order_dt',
+            [
+                'attribute'=>'order_dt',
+                'format'=>['datetime',(isset(Yii::$app->modules['datecontrol']['displaySettings']['datetime'])) ? Yii::$app->modules['datecontrol']['displaySettings']['datetime'] : 'd-m-Y H:i:s A'],
+                'type'=>DetailView::INPUT_WIDGET,
+                'widgetOptions'=> [
+                    'class'=>DateControl::classname(),
+                    'type'=>DateControl::FORMAT_DATETIME
+                ]
+            ],
             'ordered_from',
             'futures_flg',
-            'exp_delivery_dt',
+            [
+                'attribute'=>'exp_delivery_dt',
+                'format'=>['date',(isset(Yii::$app->modules['datecontrol']['displaySettings']['date'])) ? Yii::$app->modules['datecontrol']['displaySettings']['date'] : 'd-m-Y'],
+                'type'=>DetailView::INPUT_WIDGET,
+                'widgetOptions'=> [
+                    'class'=>DateControl::classname(),
+                    'type'=>DateControl::FORMAT_DATE
+                ]
+            ],
             'delivery_location',
         ],
+        'deleteOptions'=>[
+        'url'=>['delete', 'id' => $model->id],
+        'data'=>[
+        'confirm'=>Yii::t('app', 'Are you sure you want to delete this item?'),
+        'method'=>'post',
+        ],
+        ],
+        'enableEditMode'=>true,
     ]) ?>
 
 </div>

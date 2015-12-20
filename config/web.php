@@ -80,9 +80,9 @@ $config = [
  
             // format settings for displaying each date attribute
             'displaySettings' => [
-                'date' => 'd-m-Y',
+                'date' => 'MM-dd-yyyy',
                 'time' => 'H:i:s A',
-                'datetime' => 'd-m-Y H:i:s A',
+                'datetime' => 'MM-dd-yyyy H:i:s A',
             ],
  
             // format settings for saving each date attribute

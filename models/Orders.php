@@ -56,14 +56,14 @@ class Orders extends \yii\db\ActiveRecord
         return [
             'id' => 'ID',
             'qty' => 'Qty',
-            'price_per_unit' => 'Price Per Unit',
+            'price_per_unit' => 'Price',
             'wine_id' => 'Wine ID',
             'user_id' => 'User ID',
             'order_dt' => 'Order Dt',
-            'ordered_from' => 'Ordered From',
-            'futures_flg' => 'Futures Flg',
-            'exp_delivery_dt' => 'Exp Delivery Dt',
-            'delivery_location' => 'Delivery Location',
+            'ordered_from' => 'Vendor',
+            'futures_flg' => 'Futures?',
+            'exp_delivery_dt' => 'Deliver Dt',
+            'delivery_location' => 'Deliver To',
         ];
     }
 

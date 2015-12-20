@@ -32,14 +32,12 @@ class RegionsController extends Controller
      */
     public function actionIndex()
     {
-        $searchModel = new RegionsSearch();
-        $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
-        $pager = new \yii\data\Pagination(['pageSize' => 50]);
-        $dataProvider->setPagination($pager);
-        
+        $searchModel = new RegionsSearch;
+        $dataProvider = $searchModel->search(Yii::$app->request->getQueryParams());
+
         return $this->render('index', [
-            'searchModel' => $searchModel,
             'dataProvider' => $dataProvider,
+            'searchModel' => $searchModel,
         ]);
     }
 
@@ -50,9 +48,13 @@ class RegionsController extends Controller
      */
     public function actionView($id)
     {
-        return $this->render('view', [
-            'model' => $this->findModel($id),
-        ]);
+        $model = $this->findModel($id);
+
+        if ($model->load(Yii::$app->request->post()) && $model->save()) {
+        return $this->redirect(['view', 'id' => $model->id]);
+        } else {
+        return $this->render('view', ['model' => $model]);
+}
     }
 
     /**
@@ -62,10 +64,10 @@ class RegionsController extends Controller
      */
     public function actionCreate()
     {
-        $model = new Regions();
+        $model = new Regions;
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['index']);
+            return $this->redirect(['view', 'id' => $model->id]);
         } else {
             return $this->render('create', [
                 'model' => $model,

@@ -2,18 +2,19 @@
 
 use yii\helpers\Html;
 
-
-/* @var $this yii\web\View */
-/* @var $model app\models\Wineries */
+/**
+ * @var yii\web\View $this
+ * @var app\models\Wineries $model
+ */
 
 $this->title = 'Create Wineries';
 $this->params['breadcrumbs'][] = ['label' => 'Wineries', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="wineries-create">
-
-    <h1><?= Html::encode($this->title) ?></h1>
-
+    <div class="page-header">
+        <h1><?= Html::encode($this->title) ?></h1>
+    </div>
     <?= $this->render('_form', [
         'model' => $model,
     ]) ?>

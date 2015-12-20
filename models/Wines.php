@@ -4,6 +4,7 @@ namespace app\models;
 
 use Yii;
 use yii\behaviors\TimestampBehavior;
+use app\models\UpcDBApi;
 
 /**
  * This is the model class for table "wines".
@@ -96,13 +97,22 @@ class Wines extends \yii\db\ActiveRecord
 	/**
      * @return	A concatination of winery, year, wine and varietal for dropList usage.
      */
-	public function getListingName()
+	public static function getListing()
 	{
-		return 
-			$this->winery->winery_name . ' - ' . 
-			$this->wine_year . ' - ' . 
-			$this->wine_name . ' - ' . 
-			$this->wineVarietal->name;
+		$allWines = Wines::find()->with('winery','wineVarietal')->all();
+
+		$items = array();
+
+		foreach ($allWines as $aWine)
+		{
+			$items[$aWine->id] = 
+				$aWine->winery->winery_name . '/' .
+				$aWine->wine_year . '/' . 
+				$aWine->wineVarietal->varietal_name . '/' .
+				$aWine->wine_name;
+		}
+		
+		return $items;
 	}
 
 	/**
@@ -174,5 +184,31 @@ class Wines extends \yii\db\ActiveRecord
     public function getWinery()
     {
         return $this->hasOne(Wineries::className(), ['id' => 'winery_id']);
+    }
+
+	public function afterSave($insert, $changedAttributes)
+    {
+        parent::afterSave($insert, $changedAttributes);
+
+		if ($insert)
+		{
+			// update UpcDB Here
+			$upcDB = new UpcDBApi();
+
+			$itemDetails = array();
+			$itemDetails['upc'] = $this->upc_barcode;
+			$itemDetails['msrp'] = '0.00';
+			$itemDetails['title'] = $this->wine_name;
+			$itemDetails['alias'] = $this->wine_name;
+			$itemDetails['description'] = $this->description;
+			
+			$result = $upcDB->createItem($itemDetails);
+			
+			if (!$result['success'])
+			{
+				$breakpoint_test = 'junk';
+				//log the error, but don't blow up
+			}
+		}
     }
 }

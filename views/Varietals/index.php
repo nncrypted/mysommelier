@@ -1,53 +1,87 @@
 <?php
 
 use yii\helpers\Html;
-use yii\grid\GridView;
+use kartik\grid\GridView;
+use yii\widgets\Pjax;
 
-/* @var $this yii\web\View */
-/* @var $searchModel app\models\VarietalsSearch */
-/* @var $dataProvider yii\data\ActiveDataProvider */
+/**
+ * @var yii\web\View $this
+ * @var yii\data\ActiveDataProvider $dataProvider
+ * @var app\models\VarietalsSearch $searchModel
+ */
 
 $this->title = 'Varietals';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="varietals-index">
-
-    <h1><?= Html::encode($this->title) ?></h1>
+    <div class="page-header">
+            <h1><?= Html::encode($this->title) ?></h1>
+    </div>
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
 
     <p>
-        <?= Html::a('Create Varietals', ['create'], ['class' => 'btn btn-success']) ?>
+        <?php /* echo Html::a('Create Varietals', ['create'], ['class' => 'btn btn-success'])*/  ?>
     </p>
 
-    <?= GridView::widget([
-        'dataProvider' => $dataProvider,
-        'filterModel' => $searchModel,
-        'columns' => [
-            [
-				'label' => 'Name',
-				'attribute' => 'name',
+    <?php 
+		Pjax::begin(); 
+		echo GridView::widget([
+			'dataProvider' => $dataProvider,
+			'filterModel' => $searchModel,
+			'columns' => [
+				'varietal_name',
+				[
+					'attribute' => 'common_flg',
+					'value' => 'common_flg',
+					'hAlign' => GridView::ALIGN_CENTER,
+					'width' => '90px',
+				],
+				[
+					'attribute' => 'varietal_type',
+					'value' => 'varietal_type',
+					'hAlign' => GridView::ALIGN_CENTER,
+					'width' => '90px',
+					'filterType' => GridView::FILTER_SELECT2,
+					'filter' => Yii::$app->params['varietal_types'],
+					'filterWidgetOptions' => [
+						'pluginOptions' => [
+							'allowClear' => true,
+							'width' => '90px',
+						],
+					],
+					'filterInputOptions' => [
+						'placeholder' => 'All Types'
+					],
+				],
+				'description',
+				[
+					'class' => 'kartik\grid\ActionColumn',
+					'width' => '70px',
+					'buttons' => [
+						'update' => function ($url, $model) {
+									return Html::a(
+										'<span class="glyphicon glyphicon-pencil"></span>', 
+										Yii::$app->urlManager->createUrl(['varietals/view','id' => $model->id,'edit'=>'t']), 
+										[
+											'title' => Yii::t('yii', 'Edit'),
+										]
+									);
+								}
+					],
+				],
 			],
-            [
-				'label' => 'Common?',
-				'attribute' => 'common_flg',
-				'contentOptions'=>['style'=>'max-width: 50px;'],
+			'responsive'=>true,
+			'hover'=>true,
+			'condensed'=>true,
+			'floatHeader'=>true,
+			'panel' => [
+				'heading'=>'<h3 class="panel-title"><i class="glyphicon glyphicon-th-list"></i> '.Html::encode($this->title).' </h3>',
+				'type'=>'info',
+				'before'=>Html::a('<i class="glyphicon glyphicon-plus"></i> Create Varietal', ['create'], ['class' => 'btn btn-success']),                                                                                                                                                          'after'=>Html::a('<i class="glyphicon glyphicon-repeat"></i> Reset List', ['index'], ['class' => 'btn btn-info']),
+				'showFooter'=>false
 			],
-            [
-				'label' => 'Varietal Type',
-				'attribute' => 'varietal_type',
-				'contentOptions'=>['style'=>'max-width: 50px;'],
-			],
-            [
-				'label' => 'Description',
-				'attribute' => 'description',
-				'contentOptions'=>['style'=>'min-width: 600px;'],
-			],
-            [
-				'class' => 'yii\grid\ActionColumn',
-				'contentOptions'=>['style'=>'min-width: 75px;'],
-
-			],
-        ],
-    ]); ?>
+		]); 
+		Pjax::end(); 
+	?>
 
 </div>

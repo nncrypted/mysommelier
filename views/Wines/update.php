@@ -4,15 +4,15 @@ use yii\helpers\Html;
 
 /**
  * @var yii\web\View $this
- * @var app\models\Wineries $model
+ * @var app\models\Wines $model
  */
 
-$this->title = 'Update Wineries: ' . ' ' . $model->id;
-$this->params['breadcrumbs'][] = ['label' => 'Wineries', 'url' => ['index']];
+$this->title = 'Update Wines: ' . ' ' . $model->id;
+$this->params['breadcrumbs'][] = ['label' => 'Wines', 'url' => ['index']];
 $this->params['breadcrumbs'][] = ['label' => $model->id, 'url' => ['view', 'id' => $model->id]];
 $this->params['breadcrumbs'][] = 'Update';
 ?>
-<div class="wineries-update">
+<div class="wines-update">
 
     <h1><?= Html::encode($this->title) ?></h1>
 

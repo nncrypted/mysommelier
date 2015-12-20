@@ -74,13 +74,13 @@ class UpcDBApi extends Model
             )
             ->post(Yii::$app->params['apiUrl'] . '/submit/curl.php');
 		
-		if( $response['something'] == 'OK' ) 
+		if( $response == 'OK' ) 
 		{
 			$result = ['success' => true, 'errorText' => ''];
 		} 
 		else 
 		{
-			$result = ['success' => false, 'errorText' => $response['something']];
+			$result = ['success' => false, 'errorText' => $response];
 		}
 		
 		return $result;

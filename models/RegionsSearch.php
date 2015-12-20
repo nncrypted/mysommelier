@@ -12,9 +12,6 @@ use app\models\Regions;
  */
 class RegionsSearch extends Regions
 {
-    /**
-     * @inheritdoc
-     */
     public function rules()
     {
         return [
@@ -23,41 +20,30 @@ class RegionsSearch extends Regions
         ];
     }
 
-    /**
-     * @inheritdoc
-     */
     public function scenarios()
     {
         // bypass scenarios() implementation in the parent class
         return Model::scenarios();
     }
 
-    /**
-     * Creates data provider instance with search query applied
-     *
-     * @param array $params
-     *
-     * @return ActiveDataProvider
-     */
     public function search($params)
     {
         $query = Regions::find();
 
         $dataProvider = new ActiveDataProvider([
             'query' => $query,
-            'sort' => [
-                'defaultOrder' => [
-                    'country' => SORT_ASC,
-                    'region_name' => SORT_ASC
-                ]
-            ],
+			'sort' => [
+				'defaultOrder' => [
+					'country' => SORT_DESC,
+					'region_name' => SORT_ASC,
+				],
+			],
+			'pagination' => [
+				'pageSize' => 100,
+			],
         ]);
 
-        $this->load($params);
-
-        if (!$this->validate()) {
-            // uncomment the following line if you do not want to return any records when validation fails
-            // $query->where('0=1');
+        if (!($this->load($params) && $this->validate())) {
             return $dataProvider;
         }
 

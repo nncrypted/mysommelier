@@ -2,12 +2,14 @@
 
 use yii\helpers\Html;
 
-/* @var $this yii\web\View */
-/* @var $model app\models\Varietals */
+/**
+ * @var yii\web\View $this
+ * @var app\models\Varietals $model
+ */
 
-$this->title = 'Update Varietals: ' . ' ' . $model->name;
+$this->title = 'Update Varietals: ' . ' ' . $model->id;
 $this->params['breadcrumbs'][] = ['label' => 'Varietals', 'url' => ['index']];
-$this->params['breadcrumbs'][] = ['label' => $model->name, 'url' => ['view', 'id' => $model->id]];
+$this->params['breadcrumbs'][] = ['label' => $model->id, 'url' => ['view', 'id' => $model->id]];
 $this->params['breadcrumbs'][] = 'Update';
 ?>
 <div class="varietals-update">

@@ -39,6 +39,9 @@ class AppellationsSearch extends Appellations
 					'app_name' => SORT_ASC,
 				],
 			],
+			'pagination' => [
+				'pageSize' => 100,
+			],
         ]);
 
         if (!($this->load($params) && $this->validate())) {

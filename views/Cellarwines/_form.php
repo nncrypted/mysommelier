@@ -19,7 +19,7 @@ use kartik\datecontrol\DateControl;
 
 <div class="cellarwines-form">
 
-    <?php 
+    <?php
 		$form = ActiveForm::begin(['type'=>ActiveForm::TYPE_HORIZONTAL]); 
 		echo Form::widget([
 			'model' => $model,
@@ -32,7 +32,7 @@ use kartik\datecontrol\DateControl;
 				], 
 				'wine_id'=>[
 					'type'=> Form::INPUT_DROPDOWN_LIST, 
-					'items'=>ArrayHelper::map(Wines::find()->orderBy('wine_name')->asArray()->all(), 'id', 'wine_name'),
+					'items'=>Wines::getListing(),
 				], 
 				'quantity'=>['type'=> Form::INPUT_TEXT, 'options'=>['placeholder'=>'Enter Quantity...']], 
 				'cellar_loc_id'=>[
