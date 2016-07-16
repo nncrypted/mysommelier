@@ -7,6 +7,7 @@ use Yii;
 /**
  * This is the model class for table "cellarusers".
  *
+ * @property integer $id
  * @property integer $cellar_id
  * @property integer $user_id
  * @property string $permission
@@ -32,7 +33,9 @@ class Cellarusers extends \yii\db\ActiveRecord
         return [
             [['cellar_id', 'user_id'], 'required'],
             [['cellar_id', 'user_id'], 'integer'],
-            [['permission'], 'string', 'max' => 10]
+            [['permission'], 'string', 'max' => 10],
+            [['cellar_id'], 'exist', 'skipOnError' => true, 'targetClass' => Cellars::className(), 'targetAttribute' => ['cellar_id' => 'id']],
+            [['user_id'], 'exist', 'skipOnError' => true, 'targetClass' => User::className(), 'targetAttribute' => ['user_id' => 'id']],
         ];
     }
 
@@ -42,8 +45,9 @@ class Cellarusers extends \yii\db\ActiveRecord
     public function attributeLabels()
     {
         return [
-            'cellar_id' => 'Cellar',
-            'user_id' => 'User',
+            'id' => 'ID',
+            'cellar_id' => 'Cellar ID',
+            'user_id' => 'User ID',
             'permission' => 'Permission',
         ];
     }

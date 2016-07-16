@@ -7,9 +7,9 @@ use Yii;
 /**
  * This is the model class for table "locations".
  *
- * @property integer $cellar_loc_id
+ * @property integer $id
  * @property integer $cellar_id
- * @property string $location
+ * @property string $loc_name
  *
  * @property Cellarwines[] $cellarwines
  * @property Cellars $cellar
@@ -30,9 +30,10 @@ class Locations extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['cellar_loc_id', 'cellar_id', 'location'], 'required'],
-            [['cellar_loc_id', 'cellar_id'], 'integer'],
-            [['location'], 'string', 'max' => 25]
+            [['id', 'cellar_id', 'loc_name'], 'required'],
+            [['id', 'cellar_id'], 'integer'],
+            [['loc_name'], 'string', 'max' => 25],
+            [['cellar_id'], 'exist', 'skipOnError' => true, 'targetClass' => Cellars::className(), 'targetAttribute' => ['cellar_id' => 'id']],
         ];
     }
 
@@ -42,9 +43,9 @@ class Locations extends \yii\db\ActiveRecord
     public function attributeLabels()
     {
         return [
-            'cellar_loc_id' => 'Cellar Location',
-            'cellar_id' => 'Cellar',
-            'location' => 'Location',
+            'id' => 'ID',
+            'cellar_id' => 'Cellar ID',
+            'loc_name' => 'Location',
         ];
     }
 
@@ -53,7 +54,7 @@ class Locations extends \yii\db\ActiveRecord
      */
     public function getCellarwines()
     {
-        return $this->hasMany(Cellarwines::className(), ['cellar_loc_id' => 'cellar_loc_id']);
+        return $this->hasMany(Cellarwines::className(), ['cellar_loc_id' => 'id']);
     }
 
     /**

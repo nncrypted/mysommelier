@@ -31,7 +31,7 @@ class Regions extends \yii\db\ActiveRecord
         return [
             [['region_name', 'country'], 'required'],
             [['region_name'], 'string', 'max' => 100],
-            [['country'], 'string', 'max' => 45]
+            [['country'], 'string', 'max' => 45],
         ];
     }
 
@@ -42,7 +42,7 @@ class Regions extends \yii\db\ActiveRecord
     {
         return [
             'id' => 'ID',
-            'region_name' => 'Region',
+            'region_name' => 'Region Name',
             'country' => 'Country',
         ];
     }

@@ -4,6 +4,7 @@ use yii\helpers\Html;
 use yii\helpers\ArrayHelper;
 use app\models\Appellations;
 use app\models\Wineries;
+use app\models\Varietals;
 use kartik\grid\GridView;
 use yii\widgets\Pjax;
 
@@ -13,13 +14,10 @@ use yii\widgets\Pjax;
  * @var app\models\WinesSearch $searchModel
  */
 
-$this->title = 'Wines';
+$this->title = 'Wine Picklist';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="wines-index">
-    <div class="page-header">
-            <h1><?= Html::encode($this->title) ?></h1>
-    </div>
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
 
     <p>
@@ -63,9 +61,27 @@ $this->params['breadcrumbs'][] = $this->title;
 					'width' => '90px',
 				],
 				[
-					'attribute' => 'varietal_name',
+					'attribute' => 'wine_varietal_id',
+					'header' => 'Varietal',
 					'value' => 'wineVarietal.varietal_name',
-					'width' => '175px',
+					'width' => '170px',
+					'filterType' => GridView::FILTER_SELECT2,
+					'filter' =>
+						ArrayHelper::map(Varietals::find()
+							->orderBy('varietal_name')
+							->asArray()
+							->all(),
+							'id', 'varietal_name'
+						),
+					'filterWidgetOptions' => [
+						'pluginOptions' => [
+							'allowClear' => true,
+							'width' => '200px',
+						],
+					],
+					'filterInputOptions' => [
+						'placeholder' => 'Any Varietal'
+					],
 				],
 	            'wine_name',
 				[
@@ -97,15 +113,15 @@ $this->params['breadcrumbs'][] = $this->title;
 					'hAlign' => GridView::ALIGN_CENTER,
 					'width' => '90px',
 					'filterType' => GridView::FILTER_SELECT2,
-					'filter' => Yii::$app->params['bottle_sizes'],
+					'filter' =>	Yii::$app->params['bottle_sizes'],
 					'filterWidgetOptions' => [
 						'pluginOptions' => [
 							'allowClear' => true,
-							'width' => '150px',
+							'width' => '90px',
 						],
 					],
 					'filterInputOptions' => [
-						'placeholder' => 'All sizes'
+						'placeholder' => 'Any size'
 					],
 				],
 				[
@@ -116,17 +132,18 @@ $this->params['breadcrumbs'][] = $this->title;
 				],
 				[
 					'class' => 'kartik\grid\ActionColumn',
+                    'template' => '{select}',
 					'width' => '70px',
 					'buttons' => [
-						'update' => 
+						'select' => 
 							function ($url, $model) {
 								return Html::a(
-									'<span class="glyphicon glyphicon-pencil"></span>', 
+									'<span class="glyphicon glyphicon-ok"></span>', 
 									Yii::$app->urlManager->createUrl(
-										['wines/view','id' => $model->id,'edit'=>'t']
+										['cellarwines/create','wine_id' => $model->id,'edit'=>'t']
 									), 
 									[
-										'title' => Yii::t('yii', 'Edit'),
+										'title' => Yii::t('yii', 'Add this wine to your cellar'),
 									]
 								);
 							}
@@ -137,10 +154,19 @@ $this->params['breadcrumbs'][] = $this->title;
 			'hover'=>true,
 			'condensed'=>true,
 			'floatHeader'=>true,
+			'toolbar' => [
+				[
+					'content'=>
+						Html::a('<i class="glyphicon glyphicon-plus"></i><b>New Wine</b>', ['wines/create', ['fromCellarWines' => $fromCellarWines]], ['class' => 'btn btn-success','title' => 'Add New Wine']) 
+							. ' '.
+						Html::a('<i class="glyphicon glyphicon-repeat"></i>', ['cellarwines/index'], ['class' => 'btn btn-default','title' => 'Cancel']),
+				],
+				'{export}',
+				'{toggleData}'
+			],
 			'panel' => [
 				'heading'=>'<h3 class="panel-title"><i class="glyphicon glyphicon-th-list"></i> '.Html::encode($this->title).' </h3>',
-				'type'=>'info',
-				'before'=>Html::a('<i class="glyphicon glyphicon-plus"></i> Add', ['create'], ['class' => 'btn btn-success']),                                                                                                                                                          'after'=>Html::a('<i class="glyphicon glyphicon-repeat"></i> Reset List', ['index'], ['class' => 'btn btn-info']),
+				'type'=>GridView::TYPE_PRIMARY,
 				'showFooter'=>false
 			],
 		]); 

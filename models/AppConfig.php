@@ -29,7 +29,7 @@ class AppConfig extends \yii\db\ActiveRecord
         return [
             [['id', 'wotd_id', 'wotd_dt'], 'required'],
             [['id', 'wotd_id'], 'integer'],
-            [['wotd_dt'], 'safe']
+            [['wotd_dt'], 'safe'],
         ];
     }
 

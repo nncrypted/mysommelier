@@ -3,9 +3,11 @@
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 
-/* @var $this yii\web\View */
-/* @var $model app\models\OrdersSearch */
-/* @var $form yii\widgets\ActiveForm */
+/**
+ * @var yii\web\View $this
+ * @var app\models\OrdersSearch $model
+ * @var yii\widgets\ActiveForm $form
+ */
 ?>
 
 <div class="orders-search">
@@ -15,7 +17,7 @@ use yii\widgets\ActiveForm;
         'method' => 'get',
     ]); ?>
 
-    <?= $form->field($model, 'order_id') ?>
+    <?= $form->field($model, 'id') ?>
 
     <?= $form->field($model, 'qty') ?>
 

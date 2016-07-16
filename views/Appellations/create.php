@@ -2,18 +2,19 @@
 
 use yii\helpers\Html;
 
-
-/* @var $this yii\web\View */
-/* @var $model app\models\Appellations */
+/**
+ * @var yii\web\View $this
+ * @var app\models\Appellations $model
+ */
 
 $this->title = 'Create Appellations';
 $this->params['breadcrumbs'][] = ['label' => 'Appellations', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="appellations-create">
-
-    <h1><?= Html::encode($this->title) ?></h1>
-
+    <div class="page-header">
+        <h1><?= Html::encode($this->title) ?></h1>
+    </div>
     <?= $this->render('_form', [
         'model' => $model,
     ]) ?>

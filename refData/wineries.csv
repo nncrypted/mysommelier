@@ -1,25 +1,25 @@
 id,winery_name,default_appellation_id,phone,proprietor_name,winemaker_name,website,description,image_file,create_dt,update_dt
-1,"Cantiga Wineworks",49,530-555-1212,Rich,Rich,NULL,NULL,NULL,"2013-10-28 18:20:20","2013-10-28 18:20:20"
-2,"Van der Vijer",49,530-555-1213,"Robert Van der Vijer","Robert Van der Vijer",NULL,NULL,NULL,"2013-10-28 18:20:20","2013-10-28 18:20:20"
-3,"Sobon Estates",17,530-555-1214,Unknown,Unknown,NULL,NULL,NULL,"2013-10-28 18:20:20","2013-10-28 18:20:20"
-4,"Charles Mitchell",49,530-555-1215,"Charles Mitchell",Unknown,NULL,NULL,NULL,"2013-11-04 18:20:20","2013-11-04 18:20:20"
-5,"Arrington Winery",224,615-555-1111,"Kick Brooks",Unknown,NULL,NULL,NULL,"2013-10-28 18:20:20","2013-10-28 18:20:20"
-6,"Edna Valley Winery",45,888-555-2222,Unknown,Unknown,NULL,NULL,NULL,"2013-10-28 18:20:20","2013-10-28 18:20:20"
-7,"Brancott Estate",225,888-555-3333,Unknown,Unknown,NULL,NULL,NULL,"2013-10-28 18:20:20","2013-10-28 18:20:20"
-8,"Chateau de Macard",226,888-555-4444,Unknown,Unknown,NULL,NULL,NULL,"2013-10-28 18:20:20","2013-10-28 18:20:20"
-9,"Cielo Estate",46,888-555-5555,"Bill Manson","Robert Van der Vijer",NULL,NULL,NULL,"2013-10-28 18:20:20","2013-10-28 18:20:20"
-10,Cypher,116,888-555-6666,Unknown,Unknown,NULL,NULL,NULL,"2013-10-28 18:20:20","2013-10-28 18:20:20"
-11,Donati,45,888-555-7777,Unknown,Unknown,NULL,NULL,NULL,"2013-10-28 18:20:20","2013-10-28 18:20:20"
-12,Greywacke,225,888-555-8888,Unknown,Unknown,NULL,NULL,NULL,"2013-10-28 18:20:20","2013-10-28 18:20:20"
-13,Karmere,17,888-555-9999,Unknown,Unknown,NULL,NULL,NULL,"2013-10-28 18:20:20","2013-10-28 18:20:20"
-14,"La Pristina",9,877-555-1111,Unknown,Unknown,NULL,NULL,NULL,"2013-10-28 18:20:20","2013-10-28 18:20:20"
-15,Laetitia,8,877-555-2222,Unknown,Unknown,NULL,NULL,NULL,"2013-10-28 18:20:20","2013-10-28 18:20:20"
-16,Miraflores,49,877-555-3333,Unknown,Unknown,NULL,NULL,NULL,"2013-10-28 18:20:20","2013-10-28 18:20:20"
-17,Palisandro,49,877-555-4444,Unknown,"Robert Van der Vijer",NULL,NULL,NULL,"2013-10-28 18:20:20","2013-10-28 18:20:20"
-18,Patianna,87,877-555-5555,Unknown,Unknown,NULL,NULL,NULL,"2013-10-28 18:20:20","2013-10-28 18:20:20"
-19,"Sea Ridge",227,111-222-3333,Unknown,Unknown,NULL,NULL,NULL,"2013-10-28 18:20:20","2013-10-28 18:20:20"
-20,Sextant,116,111-333-2222,Unknown,Unknown,NULL,NULL,NULL,"2013-10-28 18:20:20","2013-10-28 18:20:20"
-21,"Sierra Vista",49,222-111-3333,Unknown,Unknown,NULL,NULL,NULL,"2013-10-28 18:20:20","2013-10-28 18:20:20"
-22,"Story Vineyards",17,333-222-1111,Unknown,Unknown,NULL,NULL,NULL,"2013-10-28 18:20:20","2013-10-28 18:20:20"
-23,Summerwood,116,444-222-1212,Unknown,Unknown,NULL,NULL,NULL,"2013-10-28 18:20:20","2013-10-28 18:20:20"
-24,Trenza,116,555-333-2222,Unknown,Unknown,NULL,NULL,NULL,"2013-10-28 18:20:20","2013-10-28 18:20:20"
+1,Cantiga Wineworks,49,530-555-1212,Rich,Rich,http://www.cantigawine.com/,NULL,NULL,2013-10-28 18:20:20,2013-10-28 18:20:20
+2,Van der Vijer,49,530-555-1213,Robert Van der Vijer,Robert Van der Vijer,http://www.vdvwinery.com/,NULL,NULL,2013-10-28 18:20:20,2013-10-28 18:20:20
+3,Sobon Estates,17,530-555-1214,Unknown,Unknown,http://sobonwine.com/,NULL,NULL,2013-10-28 18:20:20,2013-10-28 18:20:20
+4,Charles Mitchell,49,530-555-1215,Charles Mitchell,Unknown,http://charlesbmitchell.com/,NULL,NULL,2013-11-04 18:20:20,2013-11-04 18:20:20
+5,Arrington Winery,224,615-555-1111,Kick Brooks,Unknown,http://www.arringtonvineyards.com/,NULL,NULL,2013-10-28 18:20:20,2013-10-28 18:20:20
+6,Edna Valley Winery,45,888-555-2222,Unknown,Unknown,http://www.ednavalleyvineyard.com/,NULL,NULL,2013-10-28 18:20:20,2013-10-28 18:20:20
+7,Brancott Estate,225,888-555-3333,Unknown,Unknown,http://www.brancottestate.com,NULL,NULL,2013-10-28 18:20:20,2013-10-28 18:20:20
+8,Chateau de Macard,226,888-555-4444,Unknown,Unknown,NULL,NULL,NULL,2013-10-28 18:20:20,2013-10-28 18:20:20
+9,Cielo Estate,46,888-555-5555,Unknown,Unknown,http://cieloestate.com/,NULL,NULL,2013-10-28 18:20:20,2013-10-28 18:20:20
+10,Cypher,116,888-555-6666,Unknown,Unknown,http://www.cypherwinery.com/,NULL,NULL,2013-10-28 18:20:20,2013-10-28 18:20:20
+11,Donati,45,888-555-7777,Unknown,Unknown,https://www.donatifamilyvineyard.com/,NULL,NULL,2013-10-28 18:20:20,2013-10-28 18:20:20
+12,Greywacke,225,888-555-8888,Unknown,Unknown,http://greywacke.com/,NULL,NULL,2013-10-28 18:20:20,2013-10-28 18:20:20
+13,Karmere,17,888-555-9999,Unknown,Unknown,http://www.karmere.com/,NULL,NULL,2013-10-28 18:20:20,2013-10-28 18:20:20
+14,La Pristina,9,877-555-1111,Unknown,Unknown,NULL,NULL,NULL,2013-10-28 18:20:20,2013-10-28 18:20:20
+15,Laetitia,8,877-555-2222,Unknown,Unknown,http://www.laetitiawine.com/,NULL,NULL,2013-10-28 18:20:20,2013-10-28 18:20:20
+16,Miraflores,49,877-555-3333,Unknown,Unknown,https://www.mirafloreswinery.com/,NULL,NULL,2013-10-28 18:20:20,2013-10-28 18:20:20
+17,Palisandro,49,877-555-4444,Shaun and Jeannine Blaylock,Unknown,http://palissandrowinery.com/,NULL,NULL,2013-10-28 18:20:20,2013-10-28 18:20:20
+18,Patianna,87,877-555-5555,Unknown,Unknown,http://patianna.com/,NULL,NULL,2013-10-28 18:20:20,2013-10-28 18:20:20
+19,Sea Ridge,227,111-222-3333,Unknown,Unknown,http://www.classicwinesofcalifornia.com/,NULL,NULL,2013-10-28 18:20:20,2013-10-28 18:20:20
+20,Sextant,116,111-333-2222,Unknown,Unknown,http://www.sextantwines.com/,NULL,NULL,2013-10-28 18:20:20,2013-10-28 18:20:20
+21,Sierra Vista,49,222-111-3333,Unknown,Unknown,http://www.sierravistawinery.com/,NULL,NULL,2013-10-28 18:20:20,2013-10-28 18:20:20
+22,Story Vineyards,17,333-222-1111,Unknown,Unknown,http://www.zin.com/,NULL,NULL,2013-10-28 18:20:20,2013-10-28 18:20:20
+23,Summerwood,116,444-222-1212,Unknown,Unknown,http://www.summerwoodwine.com/,NULL,NULL,2013-10-28 18:20:20,2013-10-28 18:20:20
+24,Trenza,116,555-333-2222,Unknown,Unknown,http://www.trenzawinery.com/,NULL,NULL,2013-10-28 18:20:20,2013-10-28 18:20:20

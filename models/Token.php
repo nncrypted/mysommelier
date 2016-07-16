@@ -33,7 +33,8 @@ class Token extends \yii\db\ActiveRecord
             [['user_id', 'code', 'created_at', 'type'], 'required'],
             [['user_id', 'created_at', 'type'], 'integer'],
             [['code'], 'string', 'max' => 32],
-            [['user_id', 'code', 'type'], 'unique', 'targetAttribute' => ['user_id', 'code', 'type'], 'message' => 'The combination of User ID, Code and Type has already been taken.']
+            [['user_id', 'code', 'type'], 'unique', 'targetAttribute' => ['user_id', 'code', 'type'], 'message' => 'The combination of User ID, Code and Type has already been taken.'],
+            [['user_id'], 'exist', 'skipOnError' => true, 'targetClass' => User::className(), 'targetAttribute' => ['user_id' => 'id']],
         ];
     }
 

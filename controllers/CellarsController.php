@@ -32,14 +32,12 @@ class CellarsController extends Controller
      */
     public function actionIndex()
     {
-        $searchModel = new CellarsSearch();
-        $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
-        $pager = new \yii\data\Pagination(['pageSize' => 20]);
-        $dataProvider->setPagination($pager);
-        
+        $searchModel = new CellarsSearch;
+        $dataProvider = $searchModel->search(Yii::$app->request->getQueryParams());
+
         return $this->render('index', [
-            'searchModel' => $searchModel,
             'dataProvider' => $dataProvider,
+            'searchModel' => $searchModel,
         ]);
     }
 
@@ -50,9 +48,13 @@ class CellarsController extends Controller
      */
     public function actionView($id)
     {
-        return $this->render('view', [
-            'model' => $this->findModel($id),
-        ]);
+        $model = $this->findModel($id);
+
+        if ($model->load(Yii::$app->request->post()) && $model->save()) {
+        return $this->redirect(['view', 'id' => $model->id]);
+        } else {
+        return $this->render('view', ['model' => $model]);
+}
     }
 
     /**
@@ -62,11 +64,24 @@ class CellarsController extends Controller
      */
     public function actionCreate()
     {
-        $model = new Cellars();
+        $model = new Cellars;
 
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['index']);
-        } else {
+        //On create, default the owner_id to current user
+        $model->owner_id = \Yii::$app->user->identity->id;
+
+        if ($model->load(Yii::$app->request->post()) && $model->save()) 
+        {
+			$cellarUser = new Cellarusers();
+			$cellarUser->cellar_id = $model->id;
+			$cellarUser->user_id = \Yii::$app->user->identity->id;
+			$cellarUser->permission = 'OWNER';
+			if ($cellarUser->save())
+			{
+				return $this->redirect(['index']);
+			}
+        } 
+        else 
+        {
             return $this->render('create', [
                 'model' => $model,
             ]);
@@ -83,9 +98,12 @@ class CellarsController extends Controller
     {
         $model = $this->findModel($id);
 
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->id]);
-        } else {
+        if ($model->load(Yii::$app->request->post()) && $model->save()) 
+        {
+			return $this->redirect(['index']);
+        } 
+        else 
+        {
             return $this->render('update', [
                 'model' => $model,
             ]);

@@ -1,38 +1,73 @@
 <?php
 
 use yii\helpers\Html;
-use yii\grid\GridView;
+use kartik\grid\GridView;
+use yii\widgets\Pjax;
 
-/* @var $this yii\web\View */
-/* @var $searchModel app\models\WineriesSearch */
-/* @var $dataProvider yii\data\ActiveDataProvider */
+/**
+ * @var yii\web\View $this
+ * @var yii\data\ActiveDataProvider $dataProvider
+ * @var app\models\WineriesSearch $searchModel
+ */
 
 $this->title = 'Wineries';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="wineries-index">
-
-    <h1><?= Html::encode($this->title) ?></h1>
+    <div class="page-header">
+            <h1><?= Html::encode($this->title) ?></h1>
+    </div>
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
 
     <p>
-        <?= Html::a('Create Wineries', ['create'], ['class' => 'btn btn-success']) ?>
+        <?php /* echo Html::a('Create Wineries', ['create'], ['class' => 'btn btn-success'])*/  ?>
     </p>
 
-    <?= GridView::widget([
-        'dataProvider' => $dataProvider,
-        'filterModel' => $searchModel,
-        'columns' => [
-            'winery_name',
-            'defaultAppellation.country',
-            'defaultAppellation.appellation',
-            'website',
-            'phone',
-            [
-				'class' => 'yii\grid\ActionColumn',
-				'contentOptions'=>['style'=>'min-width: 75px;'],
+    <?php 
+		Pjax::begin(); 
+		echo GridView::widget([
+			'dataProvider' => $dataProvider,
+			'filterModel' => $searchModel,
+			'columns' => [
+				'winery_name',
+				'phone',
+				'website', 
+				'proprietor_name',
+				[
+					'class' => 'yii\grid\ActionColumn',
+//					'width' => '70px',
+					'buttons' => [
+						'update' => 
+							function ($url, $model) {
+								return Html::a(
+									'<span class="glyphicon glyphicon-pencil"></span>', 
+									Yii::$app->urlManager->createUrl(
+										[
+											'wineries/view',
+											'id' => $model->id,
+											'edit'=>'t'
+										]
+									), 
+									[
+										'title' => Yii::t('yii', 'Edit'),
+									]
+								);
+							}
+					],
+				],
 			],
-        ],
-    ]); ?>
+			'responsive'=>true,
+			'hover'=>true,
+			'condensed'=>true,
+			'floatHeader'=>true,
+			'panel' => [
+				'heading'=>'<h3 class="panel-title"><i class="glyphicon glyphicon-th-list"></i> '.Html::encode($this->title).' </h3>',
+				'type'=>'info',
+				'before'=>Html::a('<i class="glyphicon glyphicon-plus"></i> Create Winery', ['create'], ['class' => 'btn btn-success']),                                                                                                                                                          'after'=>Html::a('<i class="glyphicon glyphicon-repeat"></i> Reset List', ['index'], ['class' => 'btn btn-info']),
+				'showFooter'=>false
+			],
+		]); 
+		Pjax::end(); 
+	?>
 
 </div>

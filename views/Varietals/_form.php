@@ -1,29 +1,39 @@
 <?php
 
 use yii\helpers\Html;
-use yii\widgets\ActiveForm;
+use kartik\widgets\ActiveForm;
+use kartik\builder\Form;
+use kartik\datecontrol\DateControl;
 
-/* @var $this yii\web\View */
-/* @var $model app\models\Varietals */
-/* @var $form yii\widgets\ActiveForm */
+/**
+ * @var yii\web\View $this
+ * @var app\models\Varietals $model
+ * @var yii\widgets\ActiveForm $form
+ */
 ?>
 
 <div class="varietals-form">
 
-    <?php $form = ActiveForm::begin(); ?>
+    <?php $form = ActiveForm::begin(['type'=>ActiveForm::TYPE_HORIZONTAL]); echo Form::widget([
 
-    <?= $form->field($model, 'name')->textInput(['maxlength' => true]) ?>
+    'model' => $model,
+    'form' => $form,
+    'columns' => 1,
+    'attributes' => [
 
-    <?= $form->field($model, 'varietal_type')->dropDownList(Yii::$app->params['varietal_types']) ?>
+'varietal_name'=>['type'=> Form::INPUT_TEXT, 'options'=>['placeholder'=>'Enter Varietal Name...', 'maxlength'=>45]], 
 
-    <?= $form->field($model, 'description')->textInput(['maxlength' => true]) ?>
+'common_flg'=>['type'=> Form::INPUT_TEXT, 'options'=>['placeholder'=>'Enter Common Flg...', 'maxlength'=>1]], 
 
-    <?= $form->field($model, 'common_flg')->textInput(['maxlength' => true]) ?>
+'varietal_type'=>['type'=> Form::INPUT_TEXT, 'options'=>['placeholder'=>'Enter Varietal Type...', 'maxlength'=>10]], 
 
-    <div class="form-group">
-        <?= Html::submitButton($model->isNewRecord ? 'Create' : 'Update', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
-    </div>
+'description'=>['type'=> Form::INPUT_TEXT, 'options'=>['placeholder'=>'Enter Description...', 'maxlength'=>255]], 
 
-    <?php ActiveForm::end(); ?>
+    ]
+
+
+    ]);
+    echo Html::submitButton($model->isNewRecord ? Yii::t('app', 'Create') : Yii::t('app', 'Update'), ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']);
+    ActiveForm::end(); ?>
 
 </div>

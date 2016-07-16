@@ -3,9 +3,11 @@
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 
-/* @var $this yii\web\View */
-/* @var $model app\models\VarietalsSearch */
-/* @var $form yii\widgets\ActiveForm */
+/**
+ * @var yii\web\View $this
+ * @var app\models\VarietalsSearch $model
+ * @var yii\widgets\ActiveForm $form
+ */
 ?>
 
 <div class="varietals-search">
@@ -17,7 +19,7 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'id') ?>
 
-    <?= $form->field($model, 'name') ?>
+    <?= $form->field($model, 'varietal_name') ?>
 
     <?= $form->field($model, 'common_flg') ?>
 

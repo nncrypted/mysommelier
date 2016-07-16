@@ -47,10 +47,11 @@
                 'items' => [
                     ['label' => 'Home', 'url' => ['/site/index']],
                     [
-						'label' => 'My Wines', 
+						'label' => 'My Cellars', 
 						'items' => [
-							['label' => 'Cellars', 'url' => ['/cellars/index']],
+							['label' => 'Wines', 'url' => ['/cellarwines/index']],
 							['label' => 'Orders', 'url' => ['/orders/index']],
+							['label' => 'Cellars', 'url' => ['/cellars/index']],
 						],
 						'visible' => !Yii::$app->user->isGuest,
 					],

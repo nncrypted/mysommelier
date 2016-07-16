@@ -12,53 +12,39 @@ use app\models\Appellations;
  */
 class AppellationsSearch extends Appellations
 {
-    /**
-     * @inheritdoc
-     */
     public function rules()
     {
         return [
             [['id', 'region_id'], 'integer'],
-            [['country', 'appellation', 'common_flg'], 'safe'],
+            [['country', 'app_name', 'common_flg'], 'safe'],
         ];
     }
 
-    /**
-     * @inheritdoc
-     */
     public function scenarios()
     {
         // bypass scenarios() implementation in the parent class
         return Model::scenarios();
     }
 
-    /**
-     * Creates data provider instance with search query applied
-     *
-     * @param array $params
-     *
-     * @return ActiveDataProvider
-     */
     public function search($params)
     {
         $query = Appellations::find();
 
         $dataProvider = new ActiveDataProvider([
             'query' => $query,
-            'sort' => [
-                'defaultOrder' => [
-                    'common_flg' => SORT_ASC,
-                    'country' => SORT_ASC,
-                    'appellation' => SORT_ASC
-                ]
-            ],
+			'sort' => [
+				'defaultOrder' => [
+					'country' => SORT_DESC,
+					'region_id' => SORT_ASC,
+					'app_name' => SORT_ASC,
+				],
+			],
+			'pagination' => [
+				'pageSize' => 100,
+			],
         ]);
 
-        $this->load($params);
-
-        if (!$this->validate()) {
-            // uncomment the following line if you do not want to return any records when validation fails
-            // $query->where('0=1');
+        if (!($this->load($params) && $this->validate())) {
             return $dataProvider;
         }
 
@@ -68,7 +54,7 @@ class AppellationsSearch extends Appellations
         ]);
 
         $query->andFilterWhere(['like', 'country', $this->country])
-            ->andFilterWhere(['like', 'appellation', $this->appellation])
+            ->andFilterWhere(['like', 'app_name', $this->app_name])
             ->andFilterWhere(['like', 'common_flg', $this->common_flg]);
 
         return $dataProvider;

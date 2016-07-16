@@ -35,7 +35,8 @@ class SocialAccount extends \yii\db\ActiveRecord
             [['provider', 'client_id'], 'required'],
             [['data'], 'string'],
             [['provider', 'client_id'], 'string', 'max' => 255],
-            [['provider', 'client_id'], 'unique', 'targetAttribute' => ['provider', 'client_id'], 'message' => 'The combination of Provider and Client ID has already been taken.']
+            [['provider', 'client_id'], 'unique', 'targetAttribute' => ['provider', 'client_id'], 'message' => 'The combination of Provider and Client ID has already been taken.'],
+            [['user_id'], 'exist', 'skipOnError' => true, 'targetClass' => User::className(), 'targetAttribute' => ['user_id' => 'id']],
         ];
     }
 

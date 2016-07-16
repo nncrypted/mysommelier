@@ -1,54 +1,58 @@
 <?php
 
-use yii\helpers\Html;
-use yii\widgets\ActiveForm;
-use yii\helpers\ArrayHelper;
 use app\models\Wineries;
 use app\models\Appellations;
 use app\models\Varietals;
+use yii\helpers\Html;
+use yii\helpers\ArrayHelper;
+use kartik\widgets\ActiveForm;
+use kartik\widgets\Select2;
+use kartik\builder\Form;
+use kartik\datecontrol\DateControl;
 
-/* @var $this yii\web\View */
-/* @var $model app\models\Wines */
-/* @var $form yii\widgets\ActiveForm */
+/**
+ * @var yii\web\View $this
+ * @var app\models\Wines $model
+ * @var yii\widgets\ActiveForm $form
+ */
 ?>
 
 <div class="wines-form">
-
-    <?php $form = ActiveForm::begin(['options' => ['enctype'=>'multipart/form-data']]); ?>
-
-    <?= $form->field($model, 'upc_barcode')->textInput(['maxlength' => true]) ?>
-
-    <?= $form->field($model, 'wine_name')->textInput(['maxlength' => true]) ?>
-
-    <?= $form->field($model, 'winery_id')->dropDownList(ArrayHelper::map(Wineries::find()->all(), 'id', 'winery_name')) ?>
-
-    <?= $form->field($model, 'appellation_id')->dropDownList(ArrayHelper::map(Appellations::find()->all(), 'id', 'appellation')) ?>
-
-    <?= $form->field($model, 'wine_year')->textInput(['maxlength' => true]) ?>
-
-    <?= $form->field($model, 'wine_varietal_id')->dropDownList(ArrayHelper::map(Varietals::find()->all(), 'id', 'name')) ?>
-
-    <?= $form->field($model, 'bottle_size')->dropDownList(Yii::$app->params['bottle_sizes']) ?>
-
-    <?= $form->field($model, 'description')->textInput(['maxlength' => true]) ?>
-
-    <?= $form->field($model, 'overall_rating')->textInput() ?>
-
-	<?= \nemmo\attachments\components\AttachmentsInput::widget([
-		'id' => 'file-input', // Optional
-		'model' => $model,
-		'options' => [ // Options of the Kartik's FileInput widget
-			'multiple' => true, // If you want to allow multiple upload, default to false
-		],
-		'pluginOptions' => [ // Plugin options of the Kartik's FileInput widget 
-			'maxFileCount' => 10 // Client max files
-		]
-	]) ?>
-	
-    <div class="form-group">
-        <?= Html::submitButton($model->isNewRecord ? 'Create' : 'Update', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
-    </div>
-
-    <?php ActiveForm::end(); ?>
-
+    <?php 
+		$form = ActiveForm::begin(['type'=>ActiveForm::TYPE_HORIZONTAL]); 
+		
+		echo Form::widget([
+			'model' => $model,
+			'form' => $form,
+			'columns' => 1,
+			'attributes' => [
+				'upc_barcode'=>['type'=> Form::INPUT_TEXT, 'options'=>['placeholder'=>'Enter Upc Barcode...', 'maxlength'=>30]], 
+				'wine_name'=>['type'=> Form::INPUT_TEXT, 'options'=>['placeholder'=>'Enter Wine Name...', 'maxlength'=>45]], 
+				'winery_id'=>[
+					'type'=> Form::INPUT_DROPDOWN_LIST, 
+					'items'=>ArrayHelper::map(Wineries::find()->orderBy('winery_name')->asArray()->all(), 'id', 'winery_name'),
+				], 
+				'appellation_id'=>[
+					'type'=> Form::INPUT_DROPDOWN_LIST, 
+					'items'=>ArrayHelper::map(Appellations::find()->orderBy('app_name')->asArray()->all(), 'id', 'app_name'),
+				], 
+				'wine_year'=>['type'=> Form::INPUT_TEXT, 'options'=>['placeholder'=>'Enter Wine Year...', 'maxlength'=>4]], 
+				'wine_varietal_id'=>[
+					'type'=> Form::INPUT_DROPDOWN_LIST, 
+					'items'=>ArrayHelper::map(Varietals::find()->orderBy('varietal_name')->asArray()->all(), 'id', 'varietal_name'),
+				], 
+				'bottle_size'=>['type'=> Form::INPUT_TEXT, 'options'=>['placeholder'=>'Enter Bottle Size...', 'maxlength'=>15]], 
+				'bottle_size'=>[
+					'type'=>Form::INPUT_DROPDOWN_LIST,
+					'items'=>Yii::$app->params['bottle_sizes'],
+				],
+				'overall_rating'=>['type'=> Form::INPUT_TEXT, 'options'=>['placeholder'=>'Enter Overall Rating...']], 
+				'created_at'=>['type'=> Form::INPUT_TEXT, 'options'=>['placeholder'=>'Enter Created At...']], 
+				'updated_at'=>['type'=> Form::INPUT_TEXT, 'options'=>['placeholder'=>'Enter Updated At...']], 
+				'description'=>['type'=> Form::INPUT_TEXT, 'options'=>['placeholder'=>'Enter Description...', 'maxlength'=>255]], 
+			]
+		]);
+		echo Html::submitButton($model->isNewRecord ? Yii::t('app', 'Create') : Yii::t('app', 'Update'), ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']);
+		ActiveForm::end(); 
+	?>
 </div>

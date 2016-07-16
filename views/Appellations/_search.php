@@ -3,9 +3,11 @@
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 
-/* @var $this yii\web\View */
-/* @var $model app\models\AppellationsSearch */
-/* @var $form yii\widgets\ActiveForm */
+/**
+ * @var yii\web\View $this
+ * @var app\models\AppellationsSearch $model
+ * @var yii\widgets\ActiveForm $form
+ */
 ?>
 
 <div class="appellations-search">
@@ -21,7 +23,7 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'region_id') ?>
 
-    <?= $form->field($model, 'appellation') ?>
+    <?= $form->field($model, 'app_name') ?>
 
     <?= $form->field($model, 'common_flg') ?>
 

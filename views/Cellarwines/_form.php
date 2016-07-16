@@ -1,37 +1,52 @@
 <?php
 
+use app\models\Cellars;
+use app\models\Wines;
+use app\models\Locations;
 use yii\helpers\Html;
-use yii\widgets\ActiveForm;
+use yii\helpers\ArrayHelper;
+use kartik\widgets\ActiveForm;
+use kartik\widgets\Select2;
+use kartik\builder\Form;
+use kartik\datecontrol\DateControl;
 
-/* @var $this yii\web\View */
-/* @var $model app\models\Cellarwines */
-/* @var $form yii\widgets\ActiveForm */
+/**
+ * @var yii\web\View $this
+ * @var app\models\Cellarwines $model
+ * @var yii\widgets\ActiveForm $form
+ */
 ?>
 
 <div class="cellarwines-form">
 
-    <?php $form = ActiveForm::begin(); ?>
-
-    <?= $form->field($model, 'cellar_id')->textInput() ?>
-
-    <?= $form->field($model, 'wine_id')->textInput() ?>
-
-    <?= $form->field($model, 'quantity')->textInput() ?>
-
-    <?= $form->field($model, 'rating')->textInput() ?>
-
-    <?= $form->field($model, 'created_at')->textInput() ?>
-
-    <?= $form->field($model, 'updated_at')->textInput() ?>
-
-    <?= $form->field($model, 'cost')->textInput(['maxlength' => true]) ?>
-
-    <?= $form->field($model, 'cellar_loc_id')->textInput() ?>
-
-    <div class="form-group">
-        <?= Html::submitButton($model->isNewRecord ? 'Create' : 'Update', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
-    </div>
-
-    <?php ActiveForm::end(); ?>
+    <?php
+		$form = ActiveForm::begin(['type'=>ActiveForm::TYPE_HORIZONTAL]); 
+		echo Form::widget([
+			'model' => $model,
+			'form' => $form,
+			'columns' => 1,
+			'attributes' => [
+				'cellar_id'=>[
+					'type'=> Form::INPUT_DROPDOWN_LIST, 
+					'items'=>ArrayHelper::map(Cellars::find()->orderBy('cellar_name')->asArray()->all(), 'id', 'cellar_name'),
+				], 
+				'wine_id'=>[
+					'type'=> Form::INPUT_DROPDOWN_LIST, 
+					'items'=>Wines::getListing(),
+				], 
+				'quantity'=>['type'=> Form::INPUT_TEXT, 'options'=>['placeholder'=>'Enter Quantity...']], 
+				'cellar_loc_id'=>[
+					'type'=> Form::INPUT_DROPDOWN_LIST, 
+					'items'=>ArrayHelper::map(Locations::find()->orderBy('loc_name')->asArray()->all(), 'id', 'loc_name'),
+				], 
+				'rating'=>['type'=> Form::INPUT_TEXT, 'options'=>['placeholder'=>'Enter Rating...']], 
+				'created_at'=>['type'=> Form::INPUT_TEXT, 'options'=>['placeholder'=>'Enter Created At...']], 
+				'updated_at'=>['type'=> Form::INPUT_TEXT, 'options'=>['placeholder'=>'Enter Updated At...']], 
+				'cost'=>['type'=> Form::INPUT_TEXT, 'options'=>['placeholder'=>'Enter Cost...', 'maxlength'=>10]], 
+			]
+		]);
+		echo Html::submitButton($model->isNewRecord ? Yii::t('app', 'Create') : Yii::t('app', 'Update'), ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']);
+		ActiveForm::end(); 
+	?>
 
 </div>

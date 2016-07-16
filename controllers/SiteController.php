@@ -61,7 +61,7 @@ class SiteController extends Controller
 
         if ($diff->days > 0)
         {
-            $wineOfTheDay = $allWines->getRandomWine(Yii::$app->params['wotdMinRating']);
+            $wineOfTheDay = $allWines->getRandomWine();
             $wotd->wotd_id = $wineOfTheDay->id;
             $wotd->wotd_dt = $currentDateTime->format('Y-m-d H:i:s');
             $wotd->save();
@@ -71,7 +71,7 @@ class SiteController extends Controller
             $wineOfTheDay = $allWines->findOne($wotd->wotd_id);
             if (!isset($wineOfTheDay))
             {
-                $wineOfTheDay = $allWines->getRandomWine(Yii::$app->params['wotdMinRating']);
+                $wineOfTheDay = $allWines->getRandomWine();
                 $wotd->wotd_id = $wineOfTheDay->id;
                 $wotd->wotd_dt = $currentDateTime->format('Y-m-d H:i:s');
                 $wotd->save();

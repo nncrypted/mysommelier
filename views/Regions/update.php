@@ -2,8 +2,10 @@
 
 use yii\helpers\Html;
 
-/* @var $this yii\web\View */
-/* @var $model app\models\Regions */
+/**
+ * @var yii\web\View $this
+ * @var app\models\Regions $model
+ */
 
 $this->title = 'Update Regions: ' . ' ' . $model->id;
 $this->params['breadcrumbs'][] = ['label' => 'Regions', 'url' => ['index']];

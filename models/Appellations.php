@@ -10,7 +10,7 @@ use Yii;
  * @property integer $id
  * @property string $country
  * @property integer $region_id
- * @property string $appellation
+ * @property string $app_name
  * @property string $common_flg
  *
  * @property Regions $region
@@ -33,10 +33,11 @@ class Appellations extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['country', 'region_id', 'appellation'], 'required'],
+            [['country', 'region_id', 'app_name'], 'required'],
             [['region_id'], 'integer'],
-            [['country', 'appellation'], 'string', 'max' => 45],
-            [['common_flg'], 'string', 'max' => 1]
+            [['country', 'app_name'], 'string', 'max' => 45],
+            [['common_flg'], 'string', 'max' => 1],
+            [['region_id'], 'exist', 'skipOnError' => true, 'targetClass' => Regions::className(), 'targetAttribute' => ['region_id' => 'id']],
         ];
     }
 
@@ -48,9 +49,9 @@ class Appellations extends \yii\db\ActiveRecord
         return [
             'id' => 'ID',
             'country' => 'Country',
-            'region_id' => 'Region',
-            'appellation' => 'Appellation',
-            'common_flg' => 'Common?',
+            'region_id' => 'Region ID',
+            'app_name' => 'Appellation',
+            'common_flg' => 'Common Flg',
         ];
     }
 

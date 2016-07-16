@@ -30,14 +30,30 @@ class WinesController extends Controller
      * Lists all Wines models.
      * @return mixed
      */
+    public function actionPicklist($fromCellarWines = FALSE)
+    {
+        $searchModel = new WinesSearch;
+        $dataProvider = $searchModel->search(Yii::$app->request->getQueryParams());
+
+        return $this->render('picklist', [
+            'dataProvider' => $dataProvider,
+            'searchModel' => $searchModel,
+            'fromCellarWines' => $fromCellarWines,
+        ]);
+    }
+
+    /**
+     * Lists all Wines models.
+     * @return mixed
+     */
     public function actionIndex()
     {
-        $searchModel = new WinesSearch();
-        $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
+        $searchModel = new WinesSearch;
+        $dataProvider = $searchModel->search(Yii::$app->request->getQueryParams());
 
         return $this->render('index', [
-            'searchModel' => $searchModel,
             'dataProvider' => $dataProvider,
+            'searchModel' => $searchModel,
         ]);
     }
 
@@ -48,9 +64,13 @@ class WinesController extends Controller
      */
     public function actionView($id)
     {
-        return $this->render('view', [
-            'model' => $this->findModel($id),
-        ]);
+        $model = $this->findModel($id);
+
+        if ($model->load(Yii::$app->request->post()) && $model->save()) {
+        return $this->redirect(['view', 'id' => $model->id]);
+        } else {
+        return $this->render('view', ['model' => $model]);
+}
     }
 
     /**
@@ -58,12 +78,20 @@ class WinesController extends Controller
      * If creation is successful, the browser will be redirected to the 'view' page.
      * @return mixed
      */
-    public function actionCreate()
+    public function actionCreate($fromCellarWines = FALSE)
     {
-        $model = new Wines();
+        $model = new Wines;
 
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->id]);
+        if ($model->load(Yii::$app->request->post()) && $model->save()) 
+        {
+            if (!$fromCellarWines)
+            {
+                return $this->redirect(['cellarwines/create', 'wine_id' => $model->id]);
+            }
+            else
+            {
+                return $this->redirect(['view', 'id' => $model->id]);
+            }
         } else {
             return $this->render('create', [
                 'model' => $model,

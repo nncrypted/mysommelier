@@ -2,8 +2,10 @@
 
 use yii\helpers\Html;
 
-/* @var $this yii\web\View */
-/* @var $model app\models\Wines */
+/**
+ * @var yii\web\View $this
+ * @var app\models\Wines $model
+ */
 
 $this->title = 'Update Wines: ' . ' ' . $model->id;
 $this->params['breadcrumbs'][] = ['label' => 'Wines', 'url' => ['index']];

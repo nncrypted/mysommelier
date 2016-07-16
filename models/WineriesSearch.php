@@ -12,6 +12,9 @@ use app\models\Wineries;
  */
 class WineriesSearch extends Wineries
 {
+	public $country;
+	public $app_name;
+
     /**
      * @inheritdoc
      */
@@ -19,7 +22,7 @@ class WineriesSearch extends Wineries
     {
         return [
             [['id', 'default_appellation_id', 'created_at', 'updated_at'], 'integer'],
-            [['winery_name', 'phone', 'proprietor_name', 'winemaker_name', 'website', 'description'], 'safe'],
+            [['winery_name', 'phone', 'proprietor_name', 'winemaker_name', 'website', 'description', 'country', 'app_name'], 'safe'],
         ];
     }
 
@@ -49,6 +52,28 @@ class WineriesSearch extends Wineries
                 'defaultOrder' => [
                     'winery_name' => SORT_ASC,
                 ],
+				'attributes' => [
+					'winery_name' => [
+						'asc' => ['winery_name' => SORT_ASC],
+						'desc' => ['winery_name' => SORT_DESC],
+					],
+					'website' => [
+						'asc' => ['website' => SORT_ASC],
+						'desc' => ['website' => SORT_DESC],
+					],
+					'app_name' => [
+						'asc' => ['app_name' => SORT_ASC],
+						'desc' => ['app_name' => SORT_DESC],
+					],
+					'country' => [
+						'asc' => ['country' => SORT_ASC],
+						'desc' => ['country' => SORT_DESC],
+					],
+					'phone' => [
+						'asc' => ['phone' => SORT_ASC],
+						'desc' => ['phone' => SORT_DESC],
+					],
+				],
 			]
         ]);
 
@@ -72,6 +97,8 @@ class WineriesSearch extends Wineries
             ->andFilterWhere(['like', 'proprietor_name', $this->proprietor_name])
             ->andFilterWhere(['like', 'winemaker_name', $this->winemaker_name])
             ->andFilterWhere(['like', 'website', $this->website])
+            ->andFilterWhere(['like', 'app_name', $this->app_name])
+            ->andFilterWhere(['like', 'country', $this->country])
             ->andFilterWhere(['like', 'description', $this->description]);
 
         return $dataProvider;
